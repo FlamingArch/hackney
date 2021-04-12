@@ -11,7 +11,7 @@ import SwiftUI
 struct hackneyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CategoriesView()
         }
     }
 }

@@ -9,21 +9,22 @@
 /* Begin PBXBuildFile section */
 		348169BE2624B0B2005CB8B4 /* hackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AB2624B0B1005CB8B4 /* hackneyApp.swift */; };
 		348169BF2624B0B2005CB8B4 /* hackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AB2624B0B1005CB8B4 /* hackneyApp.swift */; };
-		348169C02624B0B2005CB8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AC2624B0B1005CB8B4 /* ContentView.swift */; };
-		348169C12624B0B2005CB8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AC2624B0B1005CB8B4 /* ContentView.swift */; };
+		348169C02624B0B2005CB8B4 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AC2624B0B1005CB8B4 /* CategoriesView.swift */; };
+		348169C12624B0B2005CB8B4 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AC2624B0B1005CB8B4 /* CategoriesView.swift */; };
 		348169C22624B0B2005CB8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348169AD2624B0B2005CB8B4 /* Assets.xcassets */; };
 		348169C32624B0B2005CB8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348169AD2624B0B2005CB8B4 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		348169AB2624B0B1005CB8B4 /* hackneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackneyApp.swift; sourceTree = "<group>"; };
-		348169AC2624B0B1005CB8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		348169AC2624B0B1005CB8B4 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		348169AD2624B0B2005CB8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348169B22624B0B2005CB8B4 /* hackney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348169B52624B0B2005CB8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		348169BA2624B0B2005CB8B4 /* hackney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348169BC2624B0B2005CB8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		348169BD2624B0B2005CB8B4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		348169D22624BC75005CB8B4 /* hackney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hackney.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		348169A52624B0B1005CB8B4 = {
 			isa = PBXGroup;
 			children = (
+				348169D22624BC75005CB8B4 /* hackney.entitlements */,
 				348169AA2624B0B1005CB8B4 /* Shared */,
 				348169B42624B0B2005CB8B4 /* iOS */,
 				348169BB2624B0B2005CB8B4 /* macOS */,
@@ -58,7 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				348169AB2624B0B1005CB8B4 /* hackneyApp.swift */,
-				348169AC2624B0B1005CB8B4 /* ContentView.swift */,
+				348169AC2624B0B1005CB8B4 /* CategoriesView.swift */,
 				348169AD2624B0B2005CB8B4 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -187,7 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348169C02624B0B2005CB8B4 /* ContentView.swift in Sources */,
+				348169C02624B0B2005CB8B4 /* CategoriesView.swift in Sources */,
 				348169BE2624B0B2005CB8B4 /* hackneyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348169C12624B0B2005CB8B4 /* ContentView.swift in Sources */,
+				348169C12624B0B2005CB8B4 /* CategoriesView.swift in Sources */,
 				348169BF2624B0B2005CB8B4 /* hackneyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hackney.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YBVLTH5SD7;
 				ENABLE_PREVIEWS = YES;
@@ -332,6 +335,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flamingarch.hackney;
 				PRODUCT_NAME = hackney;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = hackney.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YBVLTH5SD7;
 				ENABLE_PREVIEWS = YES;
@@ -354,6 +360,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flamingarch.hackney;
 				PRODUCT_NAME = hackney;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
