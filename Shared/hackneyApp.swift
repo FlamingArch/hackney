@@ -11,7 +11,11 @@ import SwiftUI
 struct hackneyApp: App {
     var body: some Scene {
         WindowGroup {
-            CategoriesView()
+            NavigationView {
+                SidebarView()
+                Text("No Selection Made")
+                Text("Nothing to Show")
+            }
         }
     }
 }
