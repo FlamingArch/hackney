@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SidebarView: View {
     @State private var selection: Int? = 0
+    
     var body: some View {
         List {
             NavigationLink(

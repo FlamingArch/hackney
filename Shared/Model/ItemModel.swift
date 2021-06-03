@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HNItemType: String {
+enum HNItemType: String, Codable {
     case job,
          story,
          comment,
@@ -15,7 +15,8 @@ enum HNItemType: String {
          pollopt
 }
 
-struct HNItem {
+struct HNItem: Decodable {
+    
     /**
      # Hacker News Item
      _For more information about Hacker News API, visit: [https://github.com/HackerNews/API]_
@@ -75,6 +76,7 @@ struct HNItem {
     
     /// The ids of the item's comments, in ranked display order.
     var kids: [Int]?
+    
     /// The URL of the story
     var url: String?
     

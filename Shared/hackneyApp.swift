@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct hackneyApp: App {
+    @State private var selection: Int? = 0
     var body: some Scene {
         WindowGroup {
             NavigationView {
