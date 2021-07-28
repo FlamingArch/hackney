@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PostsView: View {
-    
+    @State private var samplePost =
+               HNItem(item: 200, type: .story, by: "Dig Bick Master", text: "Sup, this is supposed to be a large text. I'm just gonna copy this text again and again, cause I'm lazy and can't/won't type long sentences. Oh wait, nvm. It got quite large in just this amount of text, so I don't need to copy and paste stuff and make it boring...", url: "https://www.wikipedia.com/", title: "Sample Title")
     var body: some View {
-        let samplePost =
-            HNItem(item: 200, type: .story, by: "Dig Bick Master", text: "Sup, this is supposed to be a large text. I'm just gonna copy this text again and again, cause I'm lazy and can't/won't type long sentences. Oh wait, nvm. It got quite large in just this amount of text, so I don't need to copy and paste stuff and make it boring...", url: "https://www.lttstore.com/", title: "Sample Title")
+       
         List {
             ForEach(0..<50) { index in
                 NavigationLink(
@@ -29,7 +29,15 @@ struct PostsView: View {
         }
         .navigationTitle("Posts")
         .onAppear {
-            print(PostsController.fetchPost(8863))
+            PostsController.fetchJSON(8863) { data, error in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let data = data {
+                    if let stringData = String(data: data, encoding: .utf8){ print(stringData) }
+                } else { print("Nothing Received") }
+            }
         }
     }
 }
