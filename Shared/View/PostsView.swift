@@ -8,37 +8,27 @@
 import SwiftUI
 
 struct PostsView: View {
-    @State private var samplePost =
-               HNItem(item: 200, type: .story, by: "Dig Bick Master", text: "Sup, this is supposed to be a large text. I'm just gonna copy this text again and again, cause I'm lazy and can't/won't type long sentences. Oh wait, nvm. It got quite large in just this amount of text, so I don't need to copy and paste stuff and make it boring...", url: "https://www.wikipedia.com/", title: "Sample Title")
+    
+    @ObservedObject var controller: PostsController
+    
     var body: some View {
-       
+        
         List {
-            ForEach(0..<50) { index in
+            ForEach(controller.posts, id: \.id) { post in
                 NavigationLink(
-                    destination: WebView(request: URLRequest(url: URL(string: samplePost.url!)!))
-                        .navigationTitle(samplePost.url!)
+                    destination: WebView(request: URLRequest(url: URL(string: post.url!)!))
+                        .navigationTitle(post.url!)
                         .navigationBarTitleDisplayMode(.inline)
                 ) {
                     VStack(alignment: .leading) {
-                        Text(samplePost.title!).font(.headline).lineLimit(1)
-                        Text(samplePost.by!).font(.subheadline).lineLimit(1)
-                        Text(samplePost.text!).font(.subheadline).lineLimit(2).opacity(0.5)
+                        Text(post.title!).font(.headline).lineLimit(1)
+                        Text(post.by!).font(.subheadline).lineLimit(1)
+                        //                        Text(samplePost.text!).font(.subheadline).lineLimit(2).opacity(0.5)
                     }
                 }
             }
         }
         .navigationTitle("Posts")
-        .onAppear {
-            PostsController.fetchJSON(8863) { data, error in
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                if let data = data {
-                    if let stringData = String(data: data, encoding: .utf8){ print(stringData) }
-                } else { print("Nothing Received") }
-            }
-        }
     }
 }
 

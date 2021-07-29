@@ -42,25 +42,26 @@ struct HNItem: Decodable {
      */
     
     /// The item's unique id.
-    var item: Int
+    var id: Int
     
     /// true if the item is deleted.
     var deleted: Bool?
     
     /// The type of item. One of "job", "story", "comment", "poll", or "pollopt".
-    var type: HNItemType
+    //    var type: HNItemType
+    var type: String
     
     /// The username of the item's author.
     var by: String?
     
     /// Creation date of the item, in Unix Time.
-    var unixTime: Int?
-    var time: Date {
-        guard let unwrappedUnixTime = unixTime else {
-            return Date()
-        }
-        return Date(timeIntervalSince1970: TimeInterval(unwrappedUnixTime))
-    }
+    //    var time: Int?
+    //    var normalTime: Date {
+    //        guard let unwrappedUnixTime = time else {
+    //            return Date()
+    //        }
+    //        return Date(timeIntervalSince1970: TimeInterval(unwrappedUnixTime))
+    //    }
     
     /// The comment, story or poll text. HTML.
     var text: String?
@@ -90,6 +91,6 @@ struct HNItem: Decodable {
     var parts: [Int]?
     
     /// In the case of stories or polls, the total comment count
-    var descendants: [Int]?
+    var descendants: Int?
     
 }

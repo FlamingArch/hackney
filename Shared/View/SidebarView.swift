@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SidebarView: View {
     @State private var selection: Int? = 0
+    @ObservedObject var controller: PostsController
     
     var body: some View {
         List {
             NavigationLink(
-                destination: PostsView(),
+                destination: PostsView(controller: controller),
                 tag: 0,
                 selection: $selection
             ) {

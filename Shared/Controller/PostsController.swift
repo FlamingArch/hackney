@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct PostsController {
-    var posts: [HNItem] = []
+class PostsController: ObservableObject {
+    @Published var posts: [HNItem] = []
+    
+    init() { getPosts() }
     
     static func fetchJSON(_ id: Int, completion: @escaping (Data?, Error?) -> Void ) {
         guard let url = URL(string: "https://hacker-news.firebaseio.com/v0/item/\(id).json") else {
@@ -36,4 +38,27 @@ struct PostsController {
         }.resume()
         
     }
+    
+    static func decodeJSON(data: Data) -> HNItem {
+        if let decoded = try? JSONDecoder().decode(HNItem.self, from: data) {
+            return decoded
+        } else {
+            fatalError("DecodeError")
+        }
+    }
+    
+    func getPosts(count: Int = 20) {
+        for _ in 0..<count {
+            PostsController.fetchJSON(8863) { data, error in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let data = data {
+                    self.posts.append(PostsController.decodeJSON(data: data))
+                } else { print("Nothing Received") }
+            }
+        }
+    }
+    
 }

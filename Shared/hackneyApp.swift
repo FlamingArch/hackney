@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct hackneyApp: App {
-    @State private var selection: Int? = 0
+    @ObservedObject private var controller = PostsController()
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                SidebarView()
-                Text("No Selection Made")
+                SidebarView(controller: controller)
+                PostsView(controller: controller)
                 Text("Nothing to Show")
             }
         }
