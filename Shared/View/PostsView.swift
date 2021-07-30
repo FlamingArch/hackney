@@ -14,14 +14,15 @@ struct PostsView: View {
     var body: some View {
         
         List {
+            if (controller.posts.count < 20) { ProgressView() }
             ForEach(controller.posts, id: \.id) { post in
                 NavigationLink(
                     destination:
-                        // TODO: Safely Check and Unwrap URL, and show WebView Accordingly
-                        // WebView(request: URLRequest(url: URL(string: post.url ?? "https://google.com")!))
-                        // .navigationTitle(post.url!)
-                        // .navigationBarTitleDisplayMode(.inline)
-                        Text("Sup")
+                        post.url != nil ?
+                        WebView(request: URLRequest(url: URL(string: post.url!)!))
+                        .navigationBarTitle(post.url!, displayMode: .inline)
+                        : WebView(request: URLRequest(url: URL(string: "https://apple.com")!))
+                        .navigationBarTitle("https://example.com", displayMode: .inline)
                 ) {
                     VStack(alignment: .leading) {
                         Text(post.title!).font(.headline).lineLimit(1)

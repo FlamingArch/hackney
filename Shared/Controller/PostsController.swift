@@ -15,7 +15,7 @@ class PostsController: ObservableObject {
     
     @Published var posts: [HNItem] = []
     
-    init() { PostsController.getTopStoriesIDs { self.getPosts(ids: $0) } }
+    init() { PostsController.getTopStoriesIDs { self.getPosts(ids: Array($0[...30])) } }
     
     static func fetchJSON(_ url: URL?, completion: @escaping (Data?, Error?) -> Void ) {
         guard let url = url else {
@@ -102,8 +102,6 @@ class PostsController: ObservableObject {
                 completion(decodeJSON(data: data))
             }
         }
-
-//        completion([ 27998878, 27996684, 27996321, 27997167, 27997923, 27998323, 27998058, 27998642, 27998439, 27971019, 27998250, 27998109, 27996057, 27995788, 27998708, 27998282, 27993882, 27998958, 27980463, 27996130, 27996348, 27970847, 27992500, 27995057, 27985167, 27969978, 27971454, 27994866, 27994369, 27994092, 27994194, 27994692, 27991322, 27999112, 27993564, 27995313, 27996237, 27998837, 27996703, 27996693, 27993850, 27994480, 27994914, 27971255, 27997613, 27995130, 27992073, 27997599, 27997224, 27998732, 27992953, 27991120, 27970113, 27998648 ])
     }
     
 }
