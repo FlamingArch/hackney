@@ -15,7 +15,7 @@ class PostsController: ObservableObject {
     
     @Published var posts: [HNItem] = []
     
-    init() { PostsController.getTopStoriesIDs { self.getPosts(ids: Array($0[...30])) } }
+    init() { PostsController.getTopStoriesIDs { self.getPosts(ids: $0) } }
     
     static func fetchJSON(_ url: URL?, completion: @escaping (Data?, Error?) -> Void ) {
         guard let url = url else {
