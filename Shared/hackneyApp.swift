@@ -12,11 +12,10 @@ struct hackneyApp: App {
     @ObservedObject private var controller = PostsController()
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                SidebarView(controller: controller)
-                PostsView(controller: controller)
-                Text("Nothing to Show")
-            }
+                
+                TabbedView(controller: controller)
+                
+            
         }
     }
 }

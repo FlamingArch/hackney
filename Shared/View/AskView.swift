@@ -1,18 +1,18 @@
 //
-//  PostsView.swift
+//  AskView.swift
 //  hackney
 //
-//  Created by Harsh Chaturvedi on 02/06/21.
+//  Created by Harsh Chaturvedi on 07/08/21.
 //
 
 import SwiftUI
 
-struct PostsView: View {
+struct AskView: View {
     @ObservedObject var controller: PostsController
     var body: some View {
         List {
-            if (controller.posts.count < 20) { ProgressView() }
-            ForEach(controller.posts, id: \.id) { post in
+            if (controller.ask.count < 20) { ProgressView() }
+            ForEach(controller.ask, id: \.id) { post in
                 NavigationLink(
                     destination:
                         post.url != nil ?
@@ -23,6 +23,9 @@ struct PostsView: View {
                 ) {
                     VStack(alignment: .leading) {
                         Text(post.title!).font(.headline).lineLimit(3)
+                        if let unwrapped = post.text {
+                            Text(unwrapped).lineLimit(3)
+                        }
                         HStack {
                             if let unwrapped = post.score {
                                 Text(String(unwrapped) + " Points").font(.subheadline).lineLimit(1)
@@ -36,8 +39,7 @@ struct PostsView: View {
                 }
             }
         }
-        .navigationTitle("Posts")
-        .onAppear { controller.getTopPosts() }
+        .navigationTitle("Ask")
+        .onAppear { controller.getAskPosts() }
     }
 }
-

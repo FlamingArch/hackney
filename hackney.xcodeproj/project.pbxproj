@@ -15,6 +15,12 @@
 		34114DF4266808D100257940 /* PostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DF2266808D100257940 /* PostsController.swift */; };
 		3431AB7D26685AD7004B71F3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431AB7C26685AD7004B71F3 /* WebView.swift */; };
 		3431AB7E26685AD7004B71F3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3431AB7C26685AD7004B71F3 /* WebView.swift */; };
+		345742E526BDB1FF00B8ED97 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345742E426BDB1FF00B8ED97 /* TabbedView.swift */; };
+		345742E626BDB1FF00B8ED97 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345742E426BDB1FF00B8ED97 /* TabbedView.swift */; };
+		345742E826BDB3F500B8ED97 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345742E726BDB3F500B8ED97 /* CommentsView.swift */; };
+		345742E926BDB3F500B8ED97 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345742E726BDB3F500B8ED97 /* CommentsView.swift */; };
+		345742EB26BDB75900B8ED97 /* AskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345742EA26BDB75900B8ED97 /* AskView.swift */; };
+		345742EC26BDB75900B8ED97 /* AskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345742EA26BDB75900B8ED97 /* AskView.swift */; };
 		348169BE2624B0B2005CB8B4 /* hackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AB2624B0B1005CB8B4 /* hackneyApp.swift */; };
 		348169BF2624B0B2005CB8B4 /* hackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348169AB2624B0B1005CB8B4 /* hackneyApp.swift */; };
 		348169C22624B0B2005CB8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348169AD2624B0B2005CB8B4 /* Assets.xcassets */; };
@@ -40,6 +46,9 @@
 		34114DED266803CD00257940 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		34114DF2266808D100257940 /* PostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsController.swift; sourceTree = "<group>"; };
 		3431AB7C26685AD7004B71F3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		345742E426BDB1FF00B8ED97 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabbedView.swift; path = Shared/TabbedView.swift; sourceTree = SOURCE_ROOT; };
+		345742E726BDB3F500B8ED97 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		345742EA26BDB75900B8ED97 /* AskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskView.swift; sourceTree = "<group>"; };
 		348169AB2624B0B1005CB8B4 /* hackneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hackneyApp.swift; sourceTree = "<group>"; };
 		348169AD2624B0B2005CB8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348169B22624B0B2005CB8B4 /* hackney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackney.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,8 +97,11 @@
 			isa = PBXGroup;
 			children = (
 				3431AB7F26685AEB004B71F3 /* Supporting Views */,
+				345742E426BDB1FF00B8ED97 /* TabbedView.swift */,
 				348FAB1E2667EC1200672DD1 /* SidebarView.swift */,
 				34114DEA2668031500257940 /* PostsView.swift */,
+				345742E726BDB3F500B8ED97 /* CommentsView.swift */,
+				345742EA26BDB75900B8ED97 /* AskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,8 +298,11 @@
 				348169BE2624B0B2005CB8B4 /* hackneyApp.swift in Sources */,
 				348FAB1F2667EC1200672DD1 /* SidebarView.swift in Sources */,
 				34114DEE266803CD00257940 /* ItemModel.swift in Sources */,
+				345742EB26BDB75900B8ED97 /* AskView.swift in Sources */,
 				3431AB7D26685AD7004B71F3 /* WebView.swift in Sources */,
+				345742E526BDB1FF00B8ED97 /* TabbedView.swift in Sources */,
 				34114DF3266808D100257940 /* PostsController.swift in Sources */,
+				345742E826BDB3F500B8ED97 /* CommentsView.swift in Sources */,
 				34114DEB2668031500257940 /* PostsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,8 +314,11 @@
 				348169BF2624B0B2005CB8B4 /* hackneyApp.swift in Sources */,
 				348FAB202667EC1200672DD1 /* SidebarView.swift in Sources */,
 				34114DEF266803CD00257940 /* ItemModel.swift in Sources */,
+				345742EC26BDB75900B8ED97 /* AskView.swift in Sources */,
 				3431AB7E26685AD7004B71F3 /* WebView.swift in Sources */,
+				345742E626BDB1FF00B8ED97 /* TabbedView.swift in Sources */,
 				34114DF4266808D100257940 /* PostsController.swift in Sources */,
+				345742E926BDB3F500B8ED97 /* CommentsView.swift in Sources */,
 				34114DEC2668031500257940 /* PostsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

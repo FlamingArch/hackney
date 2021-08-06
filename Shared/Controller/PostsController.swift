@@ -9,13 +9,29 @@ import SwiftUI
 
 class PostsController: ObservableObject {
     
-    struct TopPosts {
-        var posts: [Int]
+    @Published var posts: [HNItem] = []
+    @Published var ask: [HNItem] = []
+    @Published var show: [HNItem] = []
+    
+    func getTopPosts() {
+        PostsController.getStoriesIDs { self.getPosts(ids: $0) { self.posts.append($0) } }
     }
     
-    @Published var posts: [HNItem] = []
+    func getBestPosts() {
+        PostsController.getStoriesIDs("best")  { self.getPosts(ids: $0) { self.posts.append($0) } }
+    }
     
-    init() { PostsController.getTopStoriesIDs { self.getPosts(ids: $0) } }
+    func getNewPosts() {
+        PostsController.getStoriesIDs("new")  { self.getPosts(ids: $0) { self.posts.append($0) } }
+    }
+    
+    func getAskPosts() {
+        PostsController.getStoriesIDs("ask")  { self.getPosts(ids: $0) { self.ask.append($0) } }
+    }
+    
+    func getShowPosts() {
+        PostsController.getStoriesIDs("show")  { self.getPosts(ids: $0) { self.show.append($0) } }
+    }
     
     static func fetchJSON(_ url: URL?, completion: @escaping (Data?, Error?) -> Void ) {
         guard let url = url else {
@@ -77,23 +93,25 @@ class PostsController: ObservableObject {
         }
     }
     
-    func getPosts(ids: [Int]) {
+    func getPosts(ids: [Int], completion: @escaping (HNItem)->Void) {
+        print("Getting \(ids.count) Posts")
         for id in ids {
             PostsController.fetchJSON(id) { data, error in
                 if error != nil {
-                    print(error!)
+                    print("ERROR FETCHING JSON: ",error!)
                     return
                 }
                 if let data = data {
-                    self.posts.append(PostsController.decodeJSON(data: data))
+                    let item: HNItem = PostsController.decodeJSON(data: data)
+                    self.posts.append(item)
                 } else { print("Nothing Received") }
             }
         }
     }
     
-    static func getTopStoriesIDs(completion: @escaping ([Int])->Void) {
+    static func getStoriesIDs(_ type: String = "top",completion: @escaping ([Int])->Void) {
         
-        fetchJSON(URL(string: "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")) { data, error in
+        fetchJSON(URL(string: "https://hacker-news.firebaseio.com/v0/\(type)stories.json?print=pretty")) { data, error in
             if error != nil {
                 print(error!)
                 return
