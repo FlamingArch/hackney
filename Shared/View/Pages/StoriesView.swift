@@ -21,18 +21,7 @@ struct PostsView: View {
                         : WebView(request: URLRequest(url: URL(string: "https://news.ycombinator.com")!))
                         .navigationBarTitle("https://news.ycombinator.com", displayMode: .inline)
                 ) {
-                    VStack(alignment: .leading) {
-                        Text(post.title!).font(.headline).lineLimit(3)
-                        HStack {
-                            if let unwrapped = post.score {
-                                Text(String(unwrapped) + " Points").font(.subheadline).lineLimit(1)
-                            }
-                            if let unwrapped = post.descendants {
-                                Text(String(unwrapped) + " Comments").font(.subheadline).lineLimit(1)
-                            }
-                        }
-                        Text("By " + post.by!).font(.subheadline).lineLimit(1).foregroundColor(.secondary)
-                    }
+                    StoryItem(title: post.title, score: post.score, descendants: post.descendants, by: post.by)
                 }
             }
         }

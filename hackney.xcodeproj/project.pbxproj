@@ -27,6 +27,10 @@
 		348FAB202667EC1200672DD1 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FAB1E2667EC1200672DD1 /* SidebarView.swift */; };
 		34AD91E526C0524B00389629 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD91E426C0524B00389629 /* TabbedView.swift */; };
 		34AD91E626C0524B00389629 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD91E426C0524B00389629 /* TabbedView.swift */; };
+		34AD91EB26C05CC500389629 /* StoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD91EA26C05CC500389629 /* StoryItem.swift */; };
+		34AD91EC26C05CC500389629 /* StoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD91EA26C05CC500389629 /* StoryItem.swift */; };
+		34AD91EE26C05D0500389629 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD91ED26C05D0500389629 /* ShowView.swift */; };
+		34AD91EF26C05D0500389629 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AD91ED26C05D0500389629 /* ShowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,8 @@
 		348169D22624BC75005CB8B4 /* hackney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hackney.entitlements; sourceTree = "<group>"; };
 		348FAB1E2667EC1200672DD1 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		34AD91E426C0524B00389629 /* TabbedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		34AD91EA26C05CC500389629 /* StoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryItem.swift; sourceTree = "<group>"; };
+		34AD91ED26C05D0500389629 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				3431AB7C26685AD7004B71F3 /* WebView.swift */,
+				34AD91EA26C05CC500389629 /* StoryItem.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 			children = (
 				34114DEA2668031500257940 /* StoriesView.swift */,
 				345742E726BDB3F500B8ED97 /* CommentsView.swift */,
+				34AD91ED26C05D0500389629 /* ShowView.swift */,
 				345742EA26BDB75900B8ED97 /* AskView.swift */,
 			);
 			path = Pages;
@@ -267,8 +275,10 @@
 			files = (
 				348169BE2624B0B2005CB8B4 /* hackneyApp.swift in Sources */,
 				348FAB1F2667EC1200672DD1 /* SidebarView.swift in Sources */,
+				34AD91EE26C05D0500389629 /* ShowView.swift in Sources */,
 				34114DEE266803CD00257940 /* ItemModel.swift in Sources */,
 				345742EB26BDB75900B8ED97 /* AskView.swift in Sources */,
+				34AD91EB26C05CC500389629 /* StoryItem.swift in Sources */,
 				3431AB7D26685AD7004B71F3 /* WebView.swift in Sources */,
 				34AD91E526C0524B00389629 /* TabbedView.swift in Sources */,
 				34114DF3266808D100257940 /* PostsController.swift in Sources */,
@@ -283,8 +293,10 @@
 			files = (
 				348169BF2624B0B2005CB8B4 /* hackneyApp.swift in Sources */,
 				348FAB202667EC1200672DD1 /* SidebarView.swift in Sources */,
+				34AD91EF26C05D0500389629 /* ShowView.swift in Sources */,
 				34114DEF266803CD00257940 /* ItemModel.swift in Sources */,
 				345742EC26BDB75900B8ED97 /* AskView.swift in Sources */,
+				34AD91EC26C05CC500389629 /* StoryItem.swift in Sources */,
 				3431AB7E26685AD7004B71F3 /* WebView.swift in Sources */,
 				34AD91E626C0524B00389629 /* TabbedView.swift in Sources */,
 				34114DF4266808D100257940 /* PostsController.swift in Sources */,

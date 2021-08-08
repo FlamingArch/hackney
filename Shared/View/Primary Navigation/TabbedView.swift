@@ -18,7 +18,7 @@ struct TabbedView: View {
             }.tabItem { Label("Stories", systemImage: "newspaper") }
             
             NavigationView{
-                Text("Comments")
+                CommentsView(controller: controller)
             }.tabItem { Label("Comments", systemImage: "text.bubble") }
             
             NavigationView{
@@ -26,7 +26,7 @@ struct TabbedView: View {
             }.tabItem { Label("Ask", systemImage: "questionmark.circle") }
             
             NavigationView{
-                Text("Show")
+                ShowView(controller: controller)
             }.tabItem { Label("Show", systemImage: "eye.circle") }
         }
     }

@@ -24,7 +24,7 @@ struct SidebarView: View {
                 )
             }
             NavigationLink(
-                destination: Text("Destination Comments"),
+                destination: CommentsView(controller: controller),
                 tag: 1,
                 selection: $selection
             ) {
@@ -34,7 +34,7 @@ struct SidebarView: View {
                 )
             }
             NavigationLink(
-                destination: Text("Destination Ask"),
+                destination: AskView(controller: controller),
                 tag: 2,
                 selection: $selection
             ) {
@@ -44,7 +44,7 @@ struct SidebarView: View {
                 )
             }
             NavigationLink(
-                destination: Text("Destination Show"),
+                destination: ShowView(controller: controller),
                 tag: 3,
                 selection: $selection
             ) {
@@ -54,14 +54,14 @@ struct SidebarView: View {
                 )
             }
             
-            Section(header: Text("Library")) {
-                NavigationLink(destination: Text("Saved Posts")) {
-                    Label(
-                        title: { Text("Saved Posts") },
-                        icon: { Image(systemName: "bookmark") }
-                    )
-                }
-            }
+//            Section(header: Text("Library")) {
+//                NavigationLink(destination: Text("Saved Posts")) {
+//                    Label(
+//                        title: { Text("Saved Posts") },
+//                        icon: { Image(systemName: "bookmark") }
+//                    )
+//                }
+//            }
         }
         .listStyle(SidebarListStyle())
         .navigationTitle("Hackney")

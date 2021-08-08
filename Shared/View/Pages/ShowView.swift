@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CommentsView: View {
+struct ShowView: View {
     @ObservedObject var controller: PostsController
     var body: some View {
         Text("Work Under Progress!")
