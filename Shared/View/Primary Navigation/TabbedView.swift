@@ -13,10 +13,21 @@ struct TabbedView: View {
     
     var body: some View {
         TabView {
-            NavigationView{ PostsView(controller: controller) }.tabItem { Label("Posts", systemImage: "newspaper") }
-            NavigationView{ Text("Comments") }.tabItem { Label("Comments", systemImage: "text.bubble") }
-            NavigationView{ AskView(controller: controller) }.tabItem { Label("Ask", systemImage: "questionmark.circle") }
-            NavigationView{ Text("Show") }.tabItem { Label("Show", systemImage: "eye.circle") }
+            NavigationView{
+                PostsView(controller: controller)
+            }.tabItem { Label("Stories", systemImage: "newspaper") }
+            
+            NavigationView{
+                Text("Comments")
+            }.tabItem { Label("Comments", systemImage: "text.bubble") }
+            
+            NavigationView{
+                AskView(controller: controller)
+            }.tabItem { Label("Ask", systemImage: "questionmark.circle") }
+            
+            NavigationView{
+                Text("Show")
+            }.tabItem { Label("Show", systemImage: "eye.circle") }
         }
     }
 }

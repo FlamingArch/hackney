@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34114DEB2668031500257940 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DEA2668031500257940 /* PostsView.swift */; };
-		34114DEC2668031500257940 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DEA2668031500257940 /* PostsView.swift */; };
+		34114DEB2668031500257940 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DEA2668031500257940 /* StoriesView.swift */; };
+		34114DEC2668031500257940 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DEA2668031500257940 /* StoriesView.swift */; };
 		34114DEE266803CD00257940 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DED266803CD00257940 /* ItemModel.swift */; };
 		34114DEF266803CD00257940 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DED266803CD00257940 /* ItemModel.swift */; };
 		34114DF3266808D100257940 /* PostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34114DF2266808D100257940 /* PostsController.swift */; };
@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34114DEA2668031500257940 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		34114DEA2668031500257940 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 		34114DED266803CD00257940 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		34114DF2266808D100257940 /* PostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsController.swift; sourceTree = "<group>"; };
 		3431AB7C26685AD7004B71F3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		34AD91E226C051E500389629 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				34114DEA2668031500257940 /* PostsView.swift */,
+				34114DEA2668031500257940 /* StoriesView.swift */,
 				345742E726BDB3F500B8ED97 /* CommentsView.swift */,
 				345742EA26BDB75900B8ED97 /* AskView.swift */,
 			);
@@ -273,7 +273,7 @@
 				34AD91E526C0524B00389629 /* TabbedView.swift in Sources */,
 				34114DF3266808D100257940 /* PostsController.swift in Sources */,
 				345742E826BDB3F500B8ED97 /* CommentsView.swift in Sources */,
-				34114DEB2668031500257940 /* PostsView.swift in Sources */,
+				34114DEB2668031500257940 /* StoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +289,7 @@
 				34AD91E626C0524B00389629 /* TabbedView.swift in Sources */,
 				34114DF4266808D100257940 /* PostsController.swift in Sources */,
 				345742E926BDB3F500B8ED97 /* CommentsView.swift in Sources */,
-				34114DEC2668031500257940 /* PostsView.swift in Sources */,
+				34114DEC2668031500257940 /* StoriesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-enum PostsSort: String {
+enum StoriesSort: String {
     case top, new, best
 }
 
 class PostsController: ObservableObject {
-    @Published var postsSort = PostsSort.best
+    @Published var storiesSort = StoriesSort.best
     
     @Published var posts: [HNItem] = []
     @Published var ask: [HNItem] = []
     @Published var show: [HNItem] = []
     
-    func getPosts() {
-        PostsController.getStories(postsSort.rawValue) {
+    func getStories() {
+        PostsController.getStories(storiesSort.rawValue) {
             self.getPost(ids: $0) { self.posts.append($0) }
         }
     }
