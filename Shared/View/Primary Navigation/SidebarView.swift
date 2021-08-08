@@ -12,59 +12,62 @@ struct SidebarView: View {
     @ObservedObject var controller: PostsController
     
     var body: some View {
-        List {
-            NavigationLink(
-                destination: PostsView(controller: controller),
-                tag: 0,
-                selection: $selection
-            ) {
-                Label(
-                    title: { Text("Posts") },
-                    icon: { Image(systemName: "newspaper") }
-                )
+        NavigationView {
+            List {
+                NavigationLink(
+                    destination: PostsView(controller: controller),
+                    tag: 0,
+                    selection: $selection
+                ) {
+                    Label(
+                        title: { Text("Posts") },
+                        icon: { Image(systemName: "newspaper") }
+                    )
+                }
+                NavigationLink(
+                    destination: CommentsView(controller: controller),
+                    tag: 1,
+                    selection: $selection
+                ) {
+                    Label(
+                        title: { Text("Comments") },
+                        icon: { Image(systemName: "text.bubble") }
+                    )
+                }
+                NavigationLink(
+                    destination: AskView(controller: controller),
+                    tag: 2,
+                    selection: $selection
+                ) {
+                    Label(
+                        title: { Text("Ask") },
+                        icon: { Image(systemName: "questionmark.circle") }
+                    )
+                }
+                NavigationLink(
+                    destination: ShowView(controller: controller),
+                    tag: 3,
+                    selection: $selection
+                ) {
+                    Label(
+                        title: { Text("Show") },
+                        icon: { Image(systemName: "eye.circle") }
+                    )
+                }
+                
+    //            Section(header: Text("Library")) {
+    //                NavigationLink(destination: Text("Saved Posts")) {
+    //                    Label(
+    //                        title: { Text("Saved Posts") },
+    //                        icon: { Image(systemName: "bookmark") }
+    //                    )
+    //                }
+    //            }
             }
-            NavigationLink(
-                destination: CommentsView(controller: controller),
-                tag: 1,
-                selection: $selection
-            ) {
-                Label(
-                    title: { Text("Comments") },
-                    icon: { Image(systemName: "text.bubble") }
-                )
-            }
-            NavigationLink(
-                destination: AskView(controller: controller),
-                tag: 2,
-                selection: $selection
-            ) {
-                Label(
-                    title: { Text("Ask") },
-                    icon: { Image(systemName: "questionmark.circle") }
-                )
-            }
-            NavigationLink(
-                destination: ShowView(controller: controller),
-                tag: 3,
-                selection: $selection
-            ) {
-                Label(
-                    title: { Text("Show") },
-                    icon: { Image(systemName: "eye.circle") }
-                )
-            }
-            
-//            Section(header: Text("Library")) {
-//                NavigationLink(destination: Text("Saved Posts")) {
-//                    Label(
-//                        title: { Text("Saved Posts") },
-//                        icon: { Image(systemName: "bookmark") }
-//                    )
-//                }
-//            }
+            .listStyle(SidebarListStyle())
+            .navigationTitle("Hackney")
+            .navigationViewStyle(DoubleColumnNavigationViewStyle())
         }
-        .listStyle(SidebarListStyle())
-        .navigationTitle("Hackney")
     }
 }
 

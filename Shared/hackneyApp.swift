@@ -12,10 +12,11 @@ struct hackneyApp: App {
     @ObservedObject private var controller = PostsController()
     var body: some Scene {
         WindowGroup {
-                
+            if UIDevice.current.userInterfaceIdiom == .pad{
+                SidebarView(controller: controller)
+            } else{
                 TabbedView(controller: controller)
-                
-            
+            }
         }
     }
 }
