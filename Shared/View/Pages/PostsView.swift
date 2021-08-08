@@ -37,7 +37,7 @@ struct PostsView: View {
             }
         }
         .navigationTitle("Posts")
-        .onAppear { controller.getTopPosts() }
+        .onAppear { controller.getPosts() }
     }
 }
 
