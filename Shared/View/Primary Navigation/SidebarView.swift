@@ -55,14 +55,14 @@ struct SidebarView: View {
                     )
                 }
                 
-    //            Section(header: Text("Library")) {
-    //                NavigationLink(destination: Text("Saved Posts")) {
-    //                    Label(
-    //                        title: { Text("Saved Posts") },
-    //                        icon: { Image(systemName: "bookmark") }
-    //                    )
-    //                }
-    //            }
+                //Section(header: Text("Library")) {
+                //    NavigationLink(destination: Text("Saved Posts")) {
+                //        Label(
+                //            title: { Text("Saved Posts") },
+                //            icon: { Image(systemName: "bookmark") }
+                //        )
+                //    }
+                //}
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Hackney")

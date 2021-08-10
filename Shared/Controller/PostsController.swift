@@ -72,7 +72,6 @@ extension PostsController {
 //MARK: - Network Data Tasks
 extension PostsController {
     func getPost(ids: [Int], completion: @escaping (HNItem)->Void) {
-        print("Getting \(ids.count) Posts")
         for id in ids {
             PostsController.fetchJSON(id) { data, error in
                 if error != nil {
@@ -81,7 +80,7 @@ extension PostsController {
                 }
                 if let data = data {
                     let item: HNItem = PostsController.decodeJSON(data: data)
-                    self.posts.append(item)
+                    completion(item)
                 } else { print("Nothing Received") }
             }
         }
