@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ExpandedView: View {
-    var url: URL?
+    var item: HNItem
     var commentsCount: Int?
     @State private var showingCommentsSheet = false
     var body: some View {
         ZStack(alignment: .bottom) {
-            if let url = url {
+            if let url = item.url {
                 VStack {
-//                    Text(url.absoluteString).padding()
-                    WebView(request: URLRequest(url: url))
+                    // Text(url.absoluteString).padding()
+                    WebView(request: URLRequest(url: URL(string: url)!))
                         .edgesIgnoringSafeArea(.bottom)
                 }
             }
@@ -41,13 +41,7 @@ struct ExpandedView: View {
                 )
             }.padding()
         }.sheet(isPresented: $showingCommentsSheet, content: {
-            ExpandedCommentsView()
-        })
-    }
-}
-struct ExpandedView_Previews: PreviewProvider {
-    static var  previews: some View {
-        ExpandedView(url: URL(string: "https://www.google.com"), commentsCount: 12)
-            .preferredColorScheme(.dark)
+            NavigationView { CommentsView(parentPost: item) }
+        }).navigationBarTitle(item.title!, displayMode: .inline)
     }
 }

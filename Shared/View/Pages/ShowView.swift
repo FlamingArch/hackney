@@ -11,7 +11,11 @@ struct ShowView: View {
     @ObservedObject var controller: PostsController
     var body: some View {
         List {
-            if (controller.ask.count < 20) { ProgressView() }
+            if (controller.ask.count < 20) { HStack {
+                ProgressView()
+                Text("Loading ShowHN Items")
+                    .padding(.leading).foregroundColor(.secondary)
+            } }
             ForEach(controller.show, id: \.id) { post in
                 NavigationLink(
                     destination:

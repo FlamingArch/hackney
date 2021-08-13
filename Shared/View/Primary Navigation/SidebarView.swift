@@ -15,7 +15,7 @@ struct SidebarView: View {
         NavigationView {
             List {
                 NavigationLink(
-                    destination: PostsView(controller: controller),
+                    destination: StoriesView(controller: controller),
                     tag: 0,
                     selection: $selection
                 ) {
@@ -24,16 +24,17 @@ struct SidebarView: View {
                         icon: { Image(systemName: "newspaper") }
                     )
                 }
-                NavigationLink(
-                    destination: CommentsView(controller: controller),
-                    tag: 1,
-                    selection: $selection
-                ) {
-                    Label(
-                        title: { Text("Comments") },
-                        icon: { Image(systemName: "text.bubble") }
-                    )
-                }
+                // NavigationLink(
+                //     destination: CommentsView(controller: controller),
+                //     tag: 1,
+                //     selection: $selection
+                // ) {
+                //     Label(
+                //         title: { Text("Comments") },
+                //         icon: { Image(systemName: "text.bubble") }
+                //     )
+                // }
+                
                 NavigationLink(
                     destination: AskView(controller: controller),
                     tag: 2,

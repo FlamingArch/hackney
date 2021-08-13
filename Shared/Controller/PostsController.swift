@@ -20,19 +20,19 @@ class PostsController: ObservableObject {
     
     func getStories() {
         PostsController.getStories(storiesSort.rawValue) {
-            self.getPost(ids: $0) { self.posts.append($0) }
+            PostsController.getPost(ids: $0) { self.posts.append($0) }
         }
     }
     
     func getAskPosts() {
         PostsController.getStories("ask")  {
-            self.getPost(ids: $0) { self.ask.append($0) }
+            PostsController.getPost(ids: $0) { self.ask.append($0) }
         }
     }
     
     func getShowPosts() {
         PostsController.getStories("show")  {
-            self.getPost(ids: $0) { self.show.append($0) }
+            PostsController.getPost(ids: $0) { self.show.append($0) }
         }
     }
 }
@@ -71,7 +71,7 @@ extension PostsController {
 
 //MARK: - Network Data Tasks
 extension PostsController {
-    func getPost(ids: [Int], completion: @escaping (HNItem)->Void) {
+    static func getPost(ids: [Int], completion: @escaping (HNItem)->Void) {
         for id in ids {
             PostsController.fetchJSON(id) { data, error in
                 if error != nil {
