@@ -15,11 +15,7 @@ struct PostsView: View {
             ForEach(controller.posts, id: \.id) { post in
                 NavigationLink(
                     destination:
-                        post.url != nil ?
-                        WebView(request: URLRequest(url: URL(string: post.url!)!))
-                        .navigationBarTitle(post.url!, displayMode: .inline)
-                        : WebView(request: URLRequest(url: URL(string: "https://news.ycombinator.com")!))
-                        .navigationBarTitle("https://news.ycombinator.com", displayMode: .inline)
+                        ExpandedView(url: URL(string: post.url!), commentsCount: post.descendants)
                 ) {
                     StoryItem(title: post.title, score: post.score, descendants: post.descendants, by: post.by)
                 }
