@@ -22,7 +22,7 @@ struct CommentsView: View {
             }
             ForEach(comments, id:\.id) { item in
                 if let text = item.text {
-                    NavigationLink(destination: ExpandedComment(text: text, by: item.by ?? "")) {
+                    NavigationLink(destination: ExpandedComment(item: item)) {
                         VStack(alignment: .leading) {
                             Text(text).lineLimit(3)
                             HStack {
@@ -38,7 +38,7 @@ struct CommentsView: View {
                 }
             }
         }.onAppear {
-            PostsController.getPost(ids: parentPost.kids!) { self.comments.append($0) }
+            if comments.count==0 { PostsController.getPost(ids: parentPost.kids!) { self.comments.append($0) } }
         }
         .toolbar {
             Button {

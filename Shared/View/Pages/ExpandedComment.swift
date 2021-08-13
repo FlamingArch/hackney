@@ -8,13 +8,32 @@
 import SwiftUI
 
 struct ExpandedComment: View {
-    var text: String
-    var by: String
+    var item: HNItem
+    @State private var replies = [HNItem]()
     
     var body: some View {
         List {
-            Section { Text(text).padding() }
-           
-        }.navigationTitle("By " + by).listStyle(InsetGroupedListStyle())
+            Section { Text(item.text!).padding() }
+            if let kids = item.kids{ Section(header: Text("Replies")) {
+                if replies.count < kids.count { HStack {
+                    ProgressView()
+                    Text("Loading Replies")
+                        .padding(.leading).foregroundColor(.secondary)
+                } }
+                ForEach(replies, id: \.id) { reply in
+                    NavigationLink(destination: ExpandedComment(item: reply)) {
+                        VStack(alignment: .leading) {
+                            Text(reply.text!)
+                            Text(reply.by!).foregroundColor(.secondary)
+                        }
+                    }
+                }
+            } }
+        }.navigationTitle("By " + item.by!).listStyle(InsetGroupedListStyle())
+        .onAppear {
+            if let kids = item.kids {
+                if replies.count==0 { PostsController.getPost(ids: kids) { replies.append($0) } }
+            }
+        }
     }
 }
