@@ -23,8 +23,8 @@ struct ExpandedComment: View {
                 ForEach(replies, id: \.id) { reply in
                     NavigationLink(destination: ExpandedComment(item: reply)) {
                         VStack(alignment: .leading) {
-                            Text(reply.text!)
-                            Text(reply.by!).foregroundColor(.secondary)
+                            if let text = reply.text { Text(text) }
+                            if let by = reply.by { Text(by).foregroundColor(.secondary) }
                         }
                     }
                 }
