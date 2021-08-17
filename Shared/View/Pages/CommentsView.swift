@@ -38,7 +38,9 @@ struct CommentsView: View {
                 }
             }
         }.onAppear {
-            if comments.count==0 { PostsController.getPost(ids: parentPost.kids!) { self.comments.append($0) } }
+            if comments.count==0 { if let kids = parentPost.kids {
+                PostsController.getPost(ids: kids) { self.comments.append($0) }
+            } }
         }
         .toolbar {
             Button {

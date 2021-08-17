@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExpandedView: View {
     var item: HNItem
-    var commentsCount: Int?
+//    var commentsCount: Int?
     @State private var showingCommentsSheet = false
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -26,7 +26,7 @@ struct ExpandedView: View {
                 HStack{
                     Image(systemName: "text.bubble")
                     Text("Comments")
-                    if let commentsCount = commentsCount {
+                    if let commentsCount = item.descendants {
                         Text("\(commentsCount)")
                             .foregroundColor(.secondary)
                     }

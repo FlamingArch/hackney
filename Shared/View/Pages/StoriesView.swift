@@ -19,7 +19,7 @@ struct StoriesView: View {
             ForEach(controller.posts, id: \.id) { post in
                 NavigationLink(
                     destination:
-                        ExpandedView(item: post, commentsCount: post.descendants)
+                        ExpandedView(item: post)
                 ) {
                     StoryItem(title: post.title, score: post.score, descendants: post.descendants, by: post.by)
                 }

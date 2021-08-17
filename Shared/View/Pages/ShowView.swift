@@ -19,11 +19,7 @@ struct ShowView: View {
             ForEach(controller.show, id: \.id) { post in
                 NavigationLink(
                     destination:
-                        post.url != nil ?
-                        WebView(request: URLRequest(url: URL(string: post.url!)!))
-                        .navigationBarTitle(post.url!, displayMode: .inline)
-                        : WebView(request: URLRequest(url: URL(string: "https://news.ycombinator.com")!))
-                        .navigationBarTitle("https://news.ycombinator.com", displayMode: .inline)
+                        ExpandedView(item: post)
                 ) {
                     VStack(alignment: .leading) {
                         Text(post.title!).font(.headline).lineLimit(3)
