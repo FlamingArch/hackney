@@ -11,7 +11,15 @@ import SwiftUI
 struct HackneyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            #if os(macOS)
+            SidebarView()
+            #else
+            if (UIDevice.current.userInterfaceIdiom == .phone) {
+                TabbedView()
+            } else {
+                SidebarView()
+            }
+            #endif
         }
     }
 }

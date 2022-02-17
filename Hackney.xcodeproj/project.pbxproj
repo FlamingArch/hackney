@@ -9,19 +9,46 @@
 /* Begin PBXBuildFile section */
 		345E249E27BEAD5400F3BA89 /* HackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E248E27BEAD5200F3BA89 /* HackneyApp.swift */; };
 		345E249F27BEAD5400F3BA89 /* HackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E248E27BEAD5200F3BA89 /* HackneyApp.swift */; };
-		345E24A027BEAD5400F3BA89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E248F27BEAD5200F3BA89 /* ContentView.swift */; };
-		345E24A127BEAD5400F3BA89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E248F27BEAD5200F3BA89 /* ContentView.swift */; };
 		345E24A227BEAD5400F3BA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345E249027BEAD5300F3BA89 /* Assets.xcassets */; };
 		345E24A327BEAD5400F3BA89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345E249027BEAD5300F3BA89 /* Assets.xcassets */; };
+		345E24AD27BEB0AF00F3BA89 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24AC27BEB0AF00F3BA89 /* TabbedView.swift */; };
+		345E24AE27BEB0AF00F3BA89 /* TabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24AC27BEB0AF00F3BA89 /* TabbedView.swift */; };
+		345E24B027BEB0C600F3BA89 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24AF27BEB0C600F3BA89 /* SidebarView.swift */; };
+		345E24B127BEB0C600F3BA89 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24AF27BEB0C600F3BA89 /* SidebarView.swift */; };
+		345E24BE27BEBE2500F3BA89 /* TopStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24BD27BEBE2500F3BA89 /* TopStories.swift */; };
+		345E24BF27BEBE2500F3BA89 /* TopStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24BD27BEBE2500F3BA89 /* TopStories.swift */; };
+		345E24C127BEBE2E00F3BA89 /* NewStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C027BEBE2E00F3BA89 /* NewStories.swift */; };
+		345E24C227BEBE2E00F3BA89 /* NewStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C027BEBE2E00F3BA89 /* NewStories.swift */; };
+		345E24C427BEBE3700F3BA89 /* BestStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C327BEBE3700F3BA89 /* BestStories.swift */; };
+		345E24C527BEBE3700F3BA89 /* BestStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C327BEBE3700F3BA89 /* BestStories.swift */; };
+		345E24C727BEBE5300F3BA89 /* AskStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C627BEBE5300F3BA89 /* AskStories.swift */; };
+		345E24C827BEBE5300F3BA89 /* AskStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C627BEBE5300F3BA89 /* AskStories.swift */; };
+		345E24CA27BEBE5900F3BA89 /* ShowStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C927BEBE5900F3BA89 /* ShowStories.swift */; };
+		345E24CB27BEBE5900F3BA89 /* ShowStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24C927BEBE5900F3BA89 /* ShowStories.swift */; };
+		345E24CD27BEBE6000F3BA89 /* JobsStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CC27BEBE6000F3BA89 /* JobsStories.swift */; };
+		345E24CE27BEBE6000F3BA89 /* JobsStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CC27BEBE6000F3BA89 /* JobsStories.swift */; };
+		345E24D027BEBE8500F3BA89 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CF27BEBE8500F3BA89 /* UserProfile.swift */; };
+		345E24D127BEBE8500F3BA89 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CF27BEBE8500F3BA89 /* UserProfile.swift */; };
+		34E309F627BEC614002891F6 /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E309F527BEC614002891F6 /* UserIcon.swift */; };
+		34E309F727BEC7E9002891F6 /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E309F527BEC614002891F6 /* UserIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		345E248E27BEAD5200F3BA89 /* HackneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackneyApp.swift; sourceTree = "<group>"; };
-		345E248F27BEAD5200F3BA89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		345E249027BEAD5300F3BA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345E249527BEAD5300F3BA89 /* Hackney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345E249B27BEAD5400F3BA89 /* Hackney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345E249D27BEAD5400F3BA89 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		345E24AC27BEB0AF00F3BA89 /* TabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedView.swift; sourceTree = "<group>"; };
+		345E24AF27BEB0C600F3BA89 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		345E24BD27BEBE2500F3BA89 /* TopStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStories.swift; sourceTree = "<group>"; };
+		345E24C027BEBE2E00F3BA89 /* NewStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStories.swift; sourceTree = "<group>"; };
+		345E24C327BEBE3700F3BA89 /* BestStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestStories.swift; sourceTree = "<group>"; };
+		345E24C627BEBE5300F3BA89 /* AskStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskStories.swift; sourceTree = "<group>"; };
+		345E24C927BEBE5900F3BA89 /* ShowStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStories.swift; sourceTree = "<group>"; };
+		345E24CC27BEBE6000F3BA89 /* JobsStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsStories.swift; sourceTree = "<group>"; };
+		345E24CF27BEBE8500F3BA89 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		34E309F527BEC614002891F6 /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				345E248E27BEAD5200F3BA89 /* HackneyApp.swift */,
-				345E248F27BEAD5200F3BA89 /* ContentView.swift */,
+				345E24D327BEBE9800F3BA89 /* View */,
 				345E249027BEAD5300F3BA89 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -76,6 +103,47 @@
 				345E249D27BEAD5400F3BA89 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		345E24B227BEB1C300F3BA89 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				345E24AC27BEB0AF00F3BA89 /* TabbedView.swift */,
+				345E24AF27BEB0C600F3BA89 /* SidebarView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		345E24BC27BEBDE700F3BA89 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				345E24CF27BEBE8500F3BA89 /* UserProfile.swift */,
+				345E24BD27BEBE2500F3BA89 /* TopStories.swift */,
+				345E24C627BEBE5300F3BA89 /* AskStories.swift */,
+				345E24C927BEBE5900F3BA89 /* ShowStories.swift */,
+				345E24CC27BEBE6000F3BA89 /* JobsStories.swift */,
+				345E24C027BEBE2E00F3BA89 /* NewStories.swift */,
+				345E24C327BEBE3700F3BA89 /* BestStories.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		345E24D227BEBE8900F3BA89 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				34E309F527BEC614002891F6 /* UserIcon.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		345E24D327BEBE9800F3BA89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				345E24D227BEBE8900F3BA89 /* Supporting */,
+				345E24BC27BEBDE700F3BA89 /* Pages */,
+				345E24B227BEB1C300F3BA89 /* Navigation */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +244,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				345E24A027BEAD5400F3BA89 /* ContentView.swift in Sources */,
+				34E309F627BEC614002891F6 /* UserIcon.swift in Sources */,
+				345E24C727BEBE5300F3BA89 /* AskStories.swift in Sources */,
+				345E24B027BEB0C600F3BA89 /* SidebarView.swift in Sources */,
+				345E24D027BEBE8500F3BA89 /* UserProfile.swift in Sources */,
+				345E24AD27BEB0AF00F3BA89 /* TabbedView.swift in Sources */,
 				345E249E27BEAD5400F3BA89 /* HackneyApp.swift in Sources */,
+				345E24C127BEBE2E00F3BA89 /* NewStories.swift in Sources */,
+				345E24BE27BEBE2500F3BA89 /* TopStories.swift in Sources */,
+				345E24CD27BEBE6000F3BA89 /* JobsStories.swift in Sources */,
+				345E24CA27BEBE5900F3BA89 /* ShowStories.swift in Sources */,
+				345E24C427BEBE3700F3BA89 /* BestStories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +262,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				345E24A127BEAD5400F3BA89 /* ContentView.swift in Sources */,
+				34E309F727BEC7E9002891F6 /* UserIcon.swift in Sources */,
+				345E24C827BEBE5300F3BA89 /* AskStories.swift in Sources */,
+				345E24B127BEB0C600F3BA89 /* SidebarView.swift in Sources */,
+				345E24D127BEBE8500F3BA89 /* UserProfile.swift in Sources */,
+				345E24AE27BEB0AF00F3BA89 /* TabbedView.swift in Sources */,
 				345E249F27BEAD5400F3BA89 /* HackneyApp.swift in Sources */,
+				345E24C227BEBE2E00F3BA89 /* NewStories.swift in Sources */,
+				345E24BF27BEBE2500F3BA89 /* TopStories.swift in Sources */,
+				345E24CE27BEBE6000F3BA89 /* JobsStories.swift in Sources */,
+				345E24CB27BEBE5900F3BA89 /* ShowStories.swift in Sources */,
+				345E24C527BEBE3700F3BA89 /* BestStories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
