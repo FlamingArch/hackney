@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct UserProfile: View {
+ 
     var body: some View {
-        
         List {
-            Button {
-                // TODO: Implement Logout
-                print("Not Implemented")
-            } label: {
-                Label("Logout", systemImage: "power")
-            }
             
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                UserIcon()
+                Button {
+                    // TODO: Implement Logout
+                    print("Not Implemented")
+                } label: {
+                    Label("Logout", systemImage: "power")
+                }
             }
         }
         .navigationTitle("User")

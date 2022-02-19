@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct HackneyApp: App {
+    @StateObject var viewModel = HackneyViewModel()
     var body: some Scene {
         WindowGroup {
             #if os(macOS)
