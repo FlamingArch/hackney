@@ -1,5 +1,5 @@
 //
-//  UserProfile.swift
+//  TopStories.swift
 //  Hackney
 //
 //  Created by Harsh Chaturvedi on 17/02/22.
@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct UserProfile: View {
+struct TopStories: View {
+    
+    @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
         List {
-            NavigationLink("Sup") {
-                Text("Sup Inside")
+            ForEach(viewModel.topStories) { item in
+                Text("\(item.id)")
             }
         }
         .toolbar {
@@ -21,11 +23,10 @@ struct UserProfile: View {
                     // TODO: Implement Logout
                     print("Not Implemented")
                 } label: {
-                    Label("Logout", systemImage: "power")
+                    Label("Hide Viewed", systemImage: "eye.slash")
                 }
             }
         }
-        .navigationTitle("User")
+        .navigationTitle("Top Stories")
     }
 }
-

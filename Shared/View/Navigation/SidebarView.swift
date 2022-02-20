@@ -61,6 +61,7 @@ struct SidebarView: View {
                 }
             }
             .listStyle(SidebarListStyle())
+            .navigationTitle("Hackney")
             
             TopStories()
             

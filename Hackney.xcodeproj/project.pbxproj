@@ -57,6 +57,7 @@
 		345E24C927BEBE5900F3BA89 /* ShowStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStories.swift; sourceTree = "<group>"; };
 		345E24CC27BEBE6000F3BA89 /* JobsStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsStories.swift; sourceTree = "<group>"; };
 		345E24CF27BEBE8500F3BA89 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		34D00B2227C262680039B9FD /* Hackney (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hackney (iOS).entitlements"; sourceTree = "<group>"; };
 		34E309F527BEC614002891F6 /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +91,7 @@
 		345E248827BEAD5200F3BA89 = {
 			isa = PBXGroup;
 			children = (
+				34D00B2227C262680039B9FD /* Hackney (iOS).entitlements */,
 				345E248D27BEAD5200F3BA89 /* Shared */,
 				345E249C27BEAD5400F3BA89 /* macOS */,
 				345E249627BEAD5300F3BA89 /* Products */,
@@ -138,12 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				345E24CF27BEBE8500F3BA89 /* UserProfile.swift */,
-				345E24BD27BEBE2500F3BA89 /* TopStories.swift */,
-				345E24C627BEBE5300F3BA89 /* AskStories.swift */,
-				345E24C927BEBE5900F3BA89 /* ShowStories.swift */,
-				345E24CC27BEBE6000F3BA89 /* JobsStories.swift */,
-				345E24C027BEBE2E00F3BA89 /* NewStories.swift */,
-				345E24C327BEBE3700F3BA89 /* BestStories.swift */,
+				34D00B2327C265380039B9FD /* Stories */,
+				34D00B2427C2654F0039B9FD /* More */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -164,6 +162,26 @@
 				345E24B227BEB1C300F3BA89 /* Navigation */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		34D00B2327C265380039B9FD /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				345E24BD27BEBE2500F3BA89 /* TopStories.swift */,
+				345E24C027BEBE2E00F3BA89 /* NewStories.swift */,
+				345E24C327BEBE3700F3BA89 /* BestStories.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		34D00B2427C2654F0039B9FD /* More */ = {
+			isa = PBXGroup;
+			children = (
+				345E24C627BEBE5300F3BA89 /* AskStories.swift */,
+				345E24C927BEBE5900F3BA89 /* ShowStories.swift */,
+				345E24CC27BEBE6000F3BA89 /* JobsStories.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Hackney (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YBVLTH5SD7;
@@ -440,6 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flamingarch.Hackney;
 				PRODUCT_NAME = Hackney;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -451,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Hackney (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YBVLTH5SD7;
@@ -470,6 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flamingarch.Hackney;
 				PRODUCT_NAME = Hackney;
 				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
