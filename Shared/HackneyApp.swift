@@ -15,22 +15,13 @@ struct HackneyApp: App {
 #if os(macOS)
             SidebarView()
                 .environmentObject(viewModel)
-                .onAppear {
-                    viewModel.fetchAll()
-                }
 #else
             if (UIDevice.current.userInterfaceIdiom == .phone) {
                 TabbedView()
                     .environmentObject(viewModel)
-                    .onAppear {
-                        viewModel.fetchAll()
-                    }
             } else {
                 SidebarView()
                     .environmentObject(viewModel)
-                    .onAppear {
-                        viewModel.fetchAll()
-                    }
             }
 #endif
         }

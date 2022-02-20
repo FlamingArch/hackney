@@ -28,5 +28,8 @@ struct TopStories: View {
             }
         }
         .navigationTitle("Top Stories")
+        .task {
+            await viewModel.fetchAll()
+        }
     }
 }

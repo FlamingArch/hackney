@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct JobsStories: View {
+    
+    @EnvironmentObject var viewModel: HackneyViewModel
+    
     var body: some View {
         Text("Hello, World!")
             .toolbar {
@@ -21,5 +24,8 @@ struct JobsStories: View {
                 }
             }
             .navigationTitle("Jobs")
+            .task {
+                await viewModel.fetchAll()
+            }
     }
 }
