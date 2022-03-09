@@ -25,7 +25,7 @@ struct NewStories: View {
             }
             .navigationTitle("New Stories")
             .task {
-                await viewModel.fetchAll()
+                await viewModel.fetchNewStories()
             }
     }
 }

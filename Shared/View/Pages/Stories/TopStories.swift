@@ -12,7 +12,17 @@ struct TopStories: View {
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
+        
         List {
+            if (viewModel.topStories.count == 0) {
+                HStack {
+                    ProgressView()
+                        .scaleEffect(0.5)
+                    Text("Fetching Posts")
+                }
+                .padding()
+            }
+            
             ForEach(viewModel.topStories) { item in
                 Text("\(item.id)")
             }
@@ -29,7 +39,7 @@ struct TopStories: View {
         }
         .navigationTitle("Top Stories")
         .task {
-            await viewModel.fetchAll()
+            await viewModel.fetchTopStories()
         }
     }
 }

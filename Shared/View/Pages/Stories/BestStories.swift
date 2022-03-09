@@ -25,7 +25,7 @@ struct BestStories: View {
             }
             .navigationTitle("Best Stories")
             .task {
-                await viewModel.fetchAll()
+                await viewModel.fetchBestStories()
             }
     }
 }

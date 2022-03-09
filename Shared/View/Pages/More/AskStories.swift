@@ -25,7 +25,7 @@ struct AskStories: View {
             }
             .navigationTitle("Ask HN")
             .task {
-                await viewModel.fetchAll()
+                await viewModel.fetchAskStories()
             }
     }
 }

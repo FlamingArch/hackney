@@ -25,7 +25,7 @@ struct ShowStories: View {
             }
             .navigationTitle("Show HN")
             .task {
-                await viewModel.fetchAll()
+                await viewModel.fetchJobsStories()
             }
     }
 }

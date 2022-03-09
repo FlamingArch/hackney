@@ -56,6 +56,7 @@ func fetchPosts(postIDs ids: [Int]) async -> [Item] {
 
 func decodeData<T: Decodable>(json data: Data) -> T {
     do {
+        print("=> Trying to decode data:\n\(data.debugDescription)\n")
         return try JSONDecoder().decode(T.self, from: data)
     }
     catch {
@@ -63,3 +64,29 @@ func decodeData<T: Decodable>(json data: Data) -> T {
     }
 }
 
+func fetchJSON(url: String) async -> Data {
+    
+    guard let url = URL(string: url) else {
+        fatalError("Invalid URL")
+    }
+    
+    let request = URLRequest(url: url)
+    
+    do {
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return data
+    } catch {
+        fatalError("Error Fetching JSON over Network. Are you connected to internet?")
+    }
+    
+}
+
+func fetchID(for channel: String) async -> [Int] {
+    let json = await fetchJSON(url: baseUrl + "\(channel).json?print=pretty")
+    let decoded: [Int] = decodeData(json: json)
+    return decoded
+}
+
+func fetchItems(_ id: Int) -> Item {
+    return Item(id: id)
+}

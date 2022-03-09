@@ -25,7 +25,7 @@ class HackneyViewModel: ObservableObject {
     
     func fetchAll() async {
         Task {
-            print("Fetching All Posts")
+            print("::Fetching All Posts::")
             await fetchTopStories()
             await fetchBestStories()
             await fetchNewStories()
@@ -36,32 +36,43 @@ class HackneyViewModel: ObservableObject {
     }
     
     func fetchTopStories() async {
-        let ids = await fetchChannelItems(channel: "topstories")
-        topStories = await fetchPosts(postIDs: ids)
+        print("::Fetching Top Stories::")
+        let ids = await fetchID(for: "topstories")
+        print("=> Fetched IDs: \(ids.debugDescription)")
     }
     
     func fetchBestStories() async {
-        let ids = await fetchChannelItems(channel: "beststories")
+        print("::Fetching Best Stories::")
+        let ids = await fetchID(for: "beststories")
+        print("=> Fetched IDs: \(ids.debugDescription)")
         bestStories = await fetchPosts(postIDs: ids)
     }
     
     func fetchNewStories() async {
-        let ids = await fetchChannelItems(channel: "newstories")
+        print("::Fetching New Stories::")
+        let ids = await fetchID(for: "newstories")
+        print("=> Fetched IDs: \(ids.debugDescription)")
         newStories = await fetchPosts(postIDs: ids)
     }
     
     func fetchAskStories() async {
-        let ids = await fetchChannelItems(channel: "askstories")
+        print("::Fetching Ask Stories::")
+        let ids = await fetchID(for: "askstories")
+        print("=> Fetched IDs: \(ids.debugDescription)")
         askStories = await fetchPosts(postIDs: ids)
     }
     
     func fetchShowStories() async {
-        let ids = await fetchChannelItems(channel: "showStories")
+        print("::Fetching Show Stories::")
+        let ids = await fetchID(for: "showStories")
+        print("=> Fetched IDs: \(ids.debugDescription)")
         showStories = await fetchPosts(postIDs: ids)
     }
     
     func fetchJobsStories() async {
+        print("::Fetching Jobs Stories::")
         let ids = await fetchChannelItems(channel: "jobstories")
+        print("=> Fetched IDs: \(ids.debugDescription)")
         jobsStories = await fetchPosts(postIDs: ids)
     }
     
