@@ -10,7 +10,6 @@ import CloudKit
 
 class HackneyViewModel: ObservableObject {
     
-    
     @Published var topStories: [Item] = []
     @Published var bestStories: [Item] = []
     @Published var newStories: [Item] = []
@@ -20,6 +19,10 @@ class HackneyViewModel: ObservableObject {
     @Published var jobsStories: [Item] = []
     
     @Published var signedInUser: User?
+    
+    @Published var showingAlert = false
+    @Published var alertTitle = ""
+    @Published var alertMessage = ""
     
     init() {  }
     

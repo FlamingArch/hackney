@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @EnvironmentObject var viewModel: HackneyViewModel
     var body: some View {
         NavigationView {
             List {
@@ -54,7 +55,7 @@ struct SidebarView: View {
                     NavigationLink {
                         UserProfile()
                     } label: {
-                        Label("Flam3Sm0k3", systemImage: "person")
+                        Label(viewModel.signedInUser?.id ?? "Account", systemImage: "person")
                     }
                 } header: {
                     Text("User")

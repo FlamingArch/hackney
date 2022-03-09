@@ -76,7 +76,7 @@ func fetchJSON(url: String) async -> Data {
         let (data, _) = try await URLSession.shared.data(for: request)
         return data
     } catch {
-        fatalError("Error Fetching JSON over Network. Are you connected to internet?")
+        fatalError("Error Fetching data over Network. Are you connected to internet?")
     }
     
 }

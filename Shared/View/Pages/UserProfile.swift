@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserProfile: View {
+    @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
         List {
@@ -18,10 +19,16 @@ struct UserProfile: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    // TODO: Implement Logout
-                    print("Not Implemented")
+                    if (viewModel.signedInUser == nil) {
+                        viewModel.signIn(id: "FlamingArch")
+                    } else  {
+                        viewModel.signOut()
+                    }
                 } label: {
-                    Label("Logout", systemImage: "power")
+                    Label(
+                        viewModel.signedInUser == nil ? "Login" : "Logout",
+                        systemImage: "power"
+                    )
                 }
             }
         }
