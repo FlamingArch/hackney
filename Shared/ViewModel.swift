@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CloudKit
 
 class HackneyViewModel: ObservableObject {
     
@@ -38,45 +37,46 @@ class HackneyViewModel: ObservableObject {
         }
     }
     
-    func fetchTopStories() async {
+    @MainActor func fetchTopStories() async {
         print("::Fetching Top Stories::")
-        let ids = await fetchID(for: "topstories")
-        print("=> Fetched IDs: \(ids.debugDescription)")
+        await fetchChannelItems(for: Channels.topstories.rawValue) { item in
+            self.topStories.append(item)
+        }
     }
     
-    func fetchBestStories() async {
+    @MainActor func fetchBestStories() async {
         print("::Fetching Best Stories::")
-        let ids = await fetchID(for: "beststories")
-        print("=> Fetched IDs: \(ids.debugDescription)")
-        bestStories = await fetchPosts(postIDs: ids)
+        await fetchChannelItems(for: Channels.beststories.rawValue) { item in
+            self.topStories.append(item)
+        }
     }
     
-    func fetchNewStories() async {
+    @MainActor func fetchNewStories() async {
         print("::Fetching New Stories::")
-        let ids = await fetchID(for: "newstories")
-        print("=> Fetched IDs: \(ids.debugDescription)")
-        newStories = await fetchPosts(postIDs: ids)
+        await fetchChannelItems(for: Channels.newstories.rawValue) { item in
+            self.topStories.append(item)
+        }
     }
     
-    func fetchAskStories() async {
+    @MainActor func fetchAskStories() async {
         print("::Fetching Ask Stories::")
-        let ids = await fetchID(for: "askstories")
-        print("=> Fetched IDs: \(ids.debugDescription)")
-        askStories = await fetchPosts(postIDs: ids)
+        await fetchChannelItems(for: Channels.askstories.rawValue) { item in
+            self.topStories.append(item)
+        }
     }
     
-    func fetchShowStories() async {
-        print("::Fetching Show Stories::")
-        let ids = await fetchID(for: "showStories")
-        print("=> Fetched IDs: \(ids.debugDescription)")
-        showStories = await fetchPosts(postIDs: ids)
+    @MainActor func fetchShowStories() async {
+        print("::Fetching Ask Stories::")
+        await fetchChannelItems(for: Channels.showstories.rawValue) { item in
+            self.topStories.append(item)
+        }
     }
     
-    func fetchJobsStories() async {
+    @MainActor func fetchJobsStories() async {
         print("::Fetching Jobs Stories::")
-        let ids = await fetchChannelItems(channel: "jobstories")
-        print("=> Fetched IDs: \(ids.debugDescription)")
-        jobsStories = await fetchPosts(postIDs: ids)
+        await fetchChannelItems(for: Channels.jobstories.rawValue) { item in
+            self.topStories.append(item)
+        }
     }
     
     

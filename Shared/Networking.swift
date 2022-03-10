@@ -8,10 +8,19 @@
 import Foundation
 import SwiftUI
 
+enum Channels :String {
+    case topstories,
+         beststories,
+         newstories,
+         askstories,
+         showstories,
+         jobstories
+}
 
 var baseUrl = "https://hacker-news.firebaseio.com/v0/"
 
 // MARK: Networking
+@available(*, deprecated, message:"fetchData is deprecated, and will be removed in fututre versions. Use fetchJSON instead.")
 func fetchData(url: String) async -> Data {
     guard let url = URL(string: url) else {
         fatalError("ERROR Networking::fetchData : Invalid URL")
@@ -24,6 +33,7 @@ func fetchData(url: String) async -> Data {
     }
 }
 
+@available(*, deprecated, message:"fetchDataCompletion is deprecated, and will be removed in fututre versions. Use fetchJSON instead.")
 func fetchDataCompletion(url: String, completion handler: @escaping (Data)->Void ) {
     guard let url = URL(string: url) else {
         print("ERROR Networking::fetchData : Invalid URL")
@@ -36,12 +46,14 @@ func fetchDataCompletion(url: String, completion handler: @escaping (Data)->Void
     }.resume()
 }
 
+@available(*, deprecated, message:"fetchChannelItem is deprecated, and will be removed in fututre versions. Use fetchID instead.")
 func fetchChannelItems(channel: String) async  -> [Int]{
     let data = await fetchData(url: baseUrl + channel + ".json")
     let items: [Int] = decodeData(json: data)
     return items
 }
 
+@available(*, deprecated, message:"fetchChannelItem([Int]) is deprecated, and will be removed in fututre versions. Use fetchChannelItems(string) or fetchJSON and decodeData to fetch items instead.")
 func fetchPosts(postIDs ids: [Int]) async -> [Item] {
     var items = [Item]();
     
@@ -89,4 +101,16 @@ func fetchID(for channel: String) async -> [Int] {
 
 func fetchItems(_ id: Int) -> Item {
     return Item(id: id)
+}
+
+func fetchChannelItems(for channel: String, completion handler: @escaping(Item)->Void) async {
+    let ids = await fetchID(for: "topstories")
+    print("=> fetchChannelItems -> Fetched IDs: \(ids.debugDescription)")
+    
+    for id in ids {
+        let itemJSON = await fetchJSON(url: baseUrl + "\(id).json?print=pretty")
+        let decodedItem: Item = decodeData(json: itemJSON)
+        
+        handler(decodedItem)
+    }
 }
