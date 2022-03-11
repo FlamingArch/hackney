@@ -111,12 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				345E248E27BEAD5200F3BA89 /* HackneyApp.swift */,
+				340F35E327C1139D000439FA /* Model */,
+				345E24D327BEBE9800F3BA89 /* View */,
 				340F35DD27C1123C000439FA /* ViewModel.swift */,
 				344E6BA827C282AD003CBBCC /* Networking.swift */,
 				342C8EDC27DB21FB009452C2 /* Old Networking.swift */,
 				342C8ED927DB2162009452C2 /* Helpers.swift */,
-				340F35E327C1139D000439FA /* Model */,
-				345E24D327BEBE9800F3BA89 /* View */,
 				345E249027BEAD5300F3BA89 /* Assets.xcassets */,
 			);
 			path = Shared;

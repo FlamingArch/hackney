@@ -12,35 +12,15 @@ struct TopStories: View {
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
-        List {
-            if (viewModel.topStories.count == 0) {
-                HStack {
-                    ProgressView()
-#if os(macOS)
-                        .scaleEffect(0.5)
-#endif
-                    Text("Fetching Posts")
-                }
-                .padding()
-            }
-            
-            ForEach(viewModel.topStories) { item in
-                Text("\(item.id)")
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    // TODO: Implement Logout
-                    print("Not Implemented")
-                } label: {
-                    Label("Hide Viewed", systemImage: "eye.slash")
+        Text("Sup")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        
+                    } label: {
+                        Label("Hide Viewed", systemImage: "eye")
+                    }
                 }
             }
-        }
-        .navigationTitle("Top Stories")
-        .task {
-            await viewModel.fetchTopItems(refresh: false)
-        }
     }
 }

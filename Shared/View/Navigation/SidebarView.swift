@@ -9,39 +9,48 @@ import SwiftUI
 
 struct SidebarView: View {
     @EnvironmentObject var viewModel: HackneyViewModel
+    
+    
     var body: some View {
         NavigationView {
             List {
                 Section {
                     NavigationLink {
-                        TopStories()
+                        TopStories() 
                     } label: {
                         Label("Top", systemImage: "arrow.up.right.circle")
                     }
+                    
                     NavigationLink {
-                        NewStories()
+                        NewStories() 
                     } label: {
                         Label("New", systemImage: "star")
                     }
+                    
                     NavigationLink {
-                        BestStories()
+                        BestStories() 
                     } label: {
                         Label("Best", systemImage: "heart")
                     }
+                    
+                    
                 } header: {
                     Text("Stories")
                 }
+                
                 Section {
                     NavigationLink {
-                        AskStories()
+                        AskStories() 
                     } label: {
                         Label("Ask", systemImage: "questionmark")
                     }
+                    
                     NavigationLink {
-                        ShowStories()
+                        ShowStories() 
                     } label: {
                         Label("Show", systemImage: "eye")
                     }
+                    
                     NavigationLink {
                         JobsStories()
                     } label: {
@@ -55,7 +64,7 @@ struct SidebarView: View {
                     NavigationLink {
                         UserProfile()
                     } label: {
-                        Label(viewModel.signedInUser?.id ?? "Account", systemImage: "person")
+                        Label(viewModel.signedInUser?.id ?? "User", systemImage: "person")
                     }
                 } header: {
                     Text("User")
@@ -66,7 +75,7 @@ struct SidebarView: View {
             
             TopStories()
             
-            Text("No Post Selected")
+            Text("No item selected")
         }
     }
 }

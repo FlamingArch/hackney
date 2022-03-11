@@ -26,7 +26,8 @@ struct UserProfile: View {
                     }
                 } label: {
                     Label(
-                        viewModel.signedInUser == nil ? "Login" : "Logout",
+//                        viewModel.signedInUser == nil ? "Login" :
+                            "Logout",
                         systemImage: "power"
                     )
                 }

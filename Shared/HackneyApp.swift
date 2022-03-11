@@ -12,18 +12,18 @@ struct HackneyApp: App {
     @StateObject var viewModel = HackneyViewModel()
     var body: some Scene {
         WindowGroup {
+            Group {
 #if os(macOS)
-            SidebarView()
-                .environmentObject(viewModel)
-#else
-            if (UIDevice.current.userInterfaceIdiom == .phone) {
-                TabbedView()
-                    .environmentObject(viewModel)
-            } else {
                 SidebarView()
-                    .environmentObject(viewModel)
-            }
+#else
+                if (UIDevice.current.userInterfaceIdiom == .phone) {
+                    TabbedView()
+                } else {
+                    SidebarView()
+                }
 #endif
+            }
+            .environmentObject(viewModel)
         }
     }
 }

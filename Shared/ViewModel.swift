@@ -76,7 +76,7 @@ extension HackneyViewModel {
         topStoriesID = await fetchChannelItems(for: .jobstories)
     }
     
-    @MainActor func fetchTopItems(refresh: Bool) async {
+    @MainActor func fetchTopItems(refresh: Bool = false) async {
         if refresh {
             topStories = []
         }
@@ -88,7 +88,7 @@ extension HackneyViewModel {
         }
     }
     
-    @MainActor func fetchNewItems(refresh: Bool) async {
+    @MainActor func fetchNewItems(refresh: Bool = false) async {
         if refresh {
             newStories = []
         }
@@ -100,7 +100,7 @@ extension HackneyViewModel {
         }
     }
     
-    @MainActor func fetchBestItems(refresh: Bool) async {
+    @MainActor func fetchBestItems(refresh: Bool = false) async {
         if refresh {
             bestStories = []
         }
@@ -112,7 +112,7 @@ extension HackneyViewModel {
         }
     }
     
-    @MainActor func fetchAskItems(refresh: Bool) async {
+    @MainActor func fetchAskItems(refresh: Bool = false) async {
         if refresh {
             askStories = []
         }
@@ -124,7 +124,7 @@ extension HackneyViewModel {
         }
     }
     
-    @MainActor func fetchShowItems(refresh: Bool) async {
+    @MainActor func fetchShowItems(refresh: Bool = false) async {
         if refresh {
             showStories = []
         }
@@ -136,7 +136,7 @@ extension HackneyViewModel {
         }
     }
     
-    @MainActor func fetchJobsItems(refresh: Bool) async {
+    @MainActor func fetchJobsItems(refresh: Bool = false) async {
         if refresh {
             jobsStories = []
         }

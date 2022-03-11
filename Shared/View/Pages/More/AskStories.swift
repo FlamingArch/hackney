@@ -12,20 +12,15 @@ struct AskStories: View {
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
-        Text("Hello, World!")
+        Text("Sup")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
-                        // TODO: Implement Logout
-                        print("Not Implemented")
+                        
                     } label: {
-                        Label("Hide Viewed", systemImage: "eye.slash")
+                        Label("Hide Viewed", systemImage: "eye")
                     }
                 }
-            }
-            .navigationTitle("Ask HN")
-            .task {
-                await viewModel.fetchAskStories()
             }
     }
 }
