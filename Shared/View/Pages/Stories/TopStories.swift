@@ -12,7 +12,6 @@ struct TopStories: View {
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
-        
         List {
             if (viewModel.topStories.count == 0) {
                 HStack {
@@ -41,7 +40,7 @@ struct TopStories: View {
         }
         .navigationTitle("Top Stories")
         .task {
-            await viewModel.fetchTopStories()
+            await viewModel.fetchTopItems(refresh: false)
         }
     }
 }

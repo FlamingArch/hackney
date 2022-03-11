@@ -13,6 +13,10 @@
 		340F35E427C11418000439FA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F35E127C1129C000439FA /* Item.swift */; };
 		340F35E527C11418000439FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F35DF27C11297000439FA /* User.swift */; };
 		340F35E627C1141C000439FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340F35DD27C1123C000439FA /* ViewModel.swift */; };
+		342C8EDA27DB2162009452C2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8ED927DB2162009452C2 /* Helpers.swift */; };
+		342C8EDB27DB2162009452C2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8ED927DB2162009452C2 /* Helpers.swift */; };
+		342C8EDD27DB21FB009452C2 /* Old Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8EDC27DB21FB009452C2 /* Old Networking.swift */; };
+		342C8EDE27DB21FB009452C2 /* Old Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8EDC27DB21FB009452C2 /* Old Networking.swift */; };
 		344E6BA927C282AD003CBBCC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344E6BA827C282AD003CBBCC /* Networking.swift */; };
 		344E6BAA27C282AD003CBBCC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344E6BA827C282AD003CBBCC /* Networking.swift */; };
 		345E249E27BEAD5400F3BA89 /* HackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E248E27BEAD5200F3BA89 /* HackneyApp.swift */; };
@@ -45,6 +49,8 @@
 		340F35DD27C1123C000439FA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		340F35DF27C11297000439FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		340F35E127C1129C000439FA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		342C8ED927DB2162009452C2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		342C8EDC27DB21FB009452C2 /* Old Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Old Networking.swift"; sourceTree = "<group>"; };
 		344E6BA827C282AD003CBBCC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		345E248E27BEAD5200F3BA89 /* HackneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackneyApp.swift; sourceTree = "<group>"; };
 		345E249027BEAD5300F3BA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 				345E248E27BEAD5200F3BA89 /* HackneyApp.swift */,
 				340F35DD27C1123C000439FA /* ViewModel.swift */,
 				344E6BA827C282AD003CBBCC /* Networking.swift */,
+				342C8EDC27DB21FB009452C2 /* Old Networking.swift */,
+				342C8ED927DB2162009452C2 /* Helpers.swift */,
 				340F35E327C1139D000439FA /* Model */,
 				345E24D327BEBE9800F3BA89 /* View */,
 				345E249027BEAD5300F3BA89 /* Assets.xcassets */,
@@ -293,9 +301,11 @@
 				340F35E227C1129C000439FA /* Item.swift in Sources */,
 				345E24D027BEBE8500F3BA89 /* UserProfile.swift in Sources */,
 				344E6BA927C282AD003CBBCC /* Networking.swift in Sources */,
+				342C8EDA27DB2162009452C2 /* Helpers.swift in Sources */,
 				345E24AD27BEB0AF00F3BA89 /* TabbedView.swift in Sources */,
 				345E249E27BEAD5400F3BA89 /* HackneyApp.swift in Sources */,
 				345E24C127BEBE2E00F3BA89 /* NewStories.swift in Sources */,
+				342C8EDD27DB21FB009452C2 /* Old Networking.swift in Sources */,
 				345E24BE27BEBE2500F3BA89 /* TopStories.swift in Sources */,
 				345E24CD27BEBE6000F3BA89 /* JobsStories.swift in Sources */,
 				345E24CA27BEBE5900F3BA89 /* ShowStories.swift in Sources */,
@@ -315,9 +325,11 @@
 				345E24D127BEBE8500F3BA89 /* UserProfile.swift in Sources */,
 				340F35E427C11418000439FA /* Item.swift in Sources */,
 				344E6BAA27C282AD003CBBCC /* Networking.swift in Sources */,
+				342C8EDB27DB2162009452C2 /* Helpers.swift in Sources */,
 				340F35E627C1141C000439FA /* ViewModel.swift in Sources */,
 				345E24AE27BEB0AF00F3BA89 /* TabbedView.swift in Sources */,
 				345E249F27BEAD5400F3BA89 /* HackneyApp.swift in Sources */,
+				342C8EDE27DB21FB009452C2 /* Old Networking.swift in Sources */,
 				345E24C227BEBE2E00F3BA89 /* NewStories.swift in Sources */,
 				345E24BF27BEBE2500F3BA89 /* TopStories.swift in Sources */,
 				345E24CE27BEBE6000F3BA89 /* JobsStories.swift in Sources */,

@@ -10,12 +10,22 @@ import Foundation
 class HackneyViewModel: ObservableObject {
     
     @Published var topStories: [Item] = []
+    @Published var topStoriesID: [Int] = []
+    
     @Published var bestStories: [Item] = []
+    @Published var bestStoriesID: [Int] = []
+    
     @Published var newStories: [Item] = []
+    @Published var newStoriesID: [Int] = []
     
     @Published var askStories: [Item] = []
+    @Published var askStoriesID: [Int] = []
+    
     @Published var showStories: [Item] = []
+    @Published var showStoriesID: [Int] = []
+    
     @Published var jobsStories: [Item] = []
+    @Published var jobsStoriesID: [Int] = []
     
     @Published var showingAlert = false
     @Published var alertTitle = ""
@@ -33,54 +43,108 @@ extension HackneyViewModel {
     func fetchAll() async {
         Task {
             debugPrint("::Fetching All Posts::")
-            await fetchTopStories()
-            await fetchBestStories()
-            await fetchNewStories()
-            await fetchAskStories()
-            await fetchShowStories()
-            await fetchJobsStories()
+            await fetchTopID()
+            await fetchBestID()
+            await fetchNewID()
+            await fetchAskID()
+            await fetchShowID()
+            await fetchJobsID()
         }
     }
     
-    @MainActor func fetchTopStories() async {
-        debugPrint("::Fetching Top Stories::")
-        await fetchChannelItems(for: Channels.topstories.rawValue) { item in
-            self.topStories.append(item)
+    @MainActor func fetchTopID() async {
+        topStoriesID = await fetchChannelItems(for: .topstories)
+    }
+    
+    @MainActor func fetchBestID() async {
+        topStoriesID = await fetchChannelItems(for: .beststories)
+    }
+    
+    @MainActor func fetchNewID() async {
+        topStoriesID = await fetchChannelItems(for: .newstories)
+    }
+    
+    @MainActor func fetchAskID() async {
+        topStoriesID = await fetchChannelItems(for: .askstories)
+    }
+    
+    @MainActor func fetchShowID() async {
+        topStoriesID = await fetchChannelItems(for: .showstories)
+    }
+    
+    @MainActor func fetchJobsID() async {
+        topStoriesID = await fetchChannelItems(for: .jobstories)
+    }
+    
+    @MainActor func fetchTopItems(refresh: Bool) async {
+        if refresh {
+            topStories = []
+        }
+        
+        if topStories.isEmpty {
+            for id in topStoriesID {
+                await topStories.append(fetchItem(id: id))
+            }
         }
     }
     
-    @MainActor func fetchBestStories() async {
-        debugPrint("::Fetching Best Stories::")
-        await fetchChannelItems(for: Channels.beststories.rawValue) { item in
-            self.topStories.append(item)
+    @MainActor func fetchNewItems(refresh: Bool) async {
+        if refresh {
+            newStories = []
+        }
+        
+        if newStories.isEmpty {
+            for id in newStoriesID {
+                await newStories.append(fetchItem(id: id))
+            }
         }
     }
     
-    @MainActor func fetchNewStories() async {
-        debugPrint("::Fetching New Stories::")
-        await fetchChannelItems(for: Channels.newstories.rawValue) { item in
-            self.topStories.append(item)
+    @MainActor func fetchBestItems(refresh: Bool) async {
+        if refresh {
+            bestStories = []
+        }
+        
+        if bestStories.isEmpty {
+            for id in bestStoriesID {
+                await bestStories.append(fetchItem(id: id))
+            }
         }
     }
     
-    @MainActor func fetchAskStories() async {
-        debugPrint("::Fetching Ask Stories::")
-        await fetchChannelItems(for: Channels.askstories.rawValue) { item in
-            self.topStories.append(item)
+    @MainActor func fetchAskItems(refresh: Bool) async {
+        if refresh {
+            askStories = []
+        }
+        
+        if askStories.isEmpty {
+            for id in askStoriesID {
+                await askStories.append(fetchItem(id: id))
+            }
         }
     }
     
-    @MainActor func fetchShowStories() async {
-        debugPrint("::Fetching Ask Stories::")
-        await fetchChannelItems(for: Channels.showstories.rawValue) { item in
-            self.topStories.append(item)
+    @MainActor func fetchShowItems(refresh: Bool) async {
+        if refresh {
+            showStories = []
+        }
+        
+        if showStories.isEmpty {
+            for id in showStoriesID {
+                await showStories.append(fetchItem(id: id))
+            }
         }
     }
     
-    @MainActor func fetchJobsStories() async {
-        debugPrint("::Fetching Jobs Stories::")
-        await fetchChannelItems(for: Channels.jobstories.rawValue) { item in
-            self.topStories.append(item)
+    @MainActor func fetchJobsItems(refresh: Bool) async {
+        if refresh {
+            jobsStories = []
+        }
+        
+        if jobsStories.isEmpty {
+            for id in jobsStoriesID {
+                await jobsStories.append(fetchItem(id: id))
+            }
         }
     }
 }
