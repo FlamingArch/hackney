@@ -11,7 +11,7 @@ enum ItemType: String {
     case job, story, comment, poll, pollopt
 }
 
-struct Item: Decodable, Identifiable {
+struct Item: Decodable, Identifiable, Hashable {
     var id: Int
     var deleted: Bool?
     var type: String?

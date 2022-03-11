@@ -77,6 +77,9 @@ struct SidebarView: View {
             
             Text("No item selected")
         }
+        .task {
+            await viewModel.fetchAll()
+        }
     }
 }
 

@@ -44,11 +44,17 @@ extension HackneyViewModel {
         Task {
             debugPrint("::Fetching All Posts::")
             await fetchTopID()
+            await fetchTopItems()
             await fetchBestID()
+            await fetchBestItems()
             await fetchNewID()
+            await fetchNewItems()
             await fetchAskID()
+            await fetchAskItems()
             await fetchShowID()
+            await fetchShowItems()
             await fetchJobsID()
+            await fetchJobsItems()
         }
     }
     
