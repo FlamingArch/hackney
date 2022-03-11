@@ -26,5 +26,5 @@ struct Item: Decodable, Identifiable {
     var score: Int?
     var title: String?
     var parts: [Int]?
-    var decendants: [Int]?
+    var decendants: Int?
 }

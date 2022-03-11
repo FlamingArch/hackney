@@ -17,17 +17,22 @@ class HackneyViewModel: ObservableObject {
     @Published var showStories: [Item] = []
     @Published var jobsStories: [Item] = []
     
-    @Published var signedInUser: User?
-    
     @Published var showingAlert = false
     @Published var alertTitle = ""
     @Published var alertMessage = ""
     
+    @Published var signedInUser: User?
+    
+    
     init() {  }
     
+}
+
+// MARK: - Fetch Functions
+extension HackneyViewModel {
     func fetchAll() async {
         Task {
-            print("::Fetching All Posts::")
+            debugPrint("::Fetching All Posts::")
             await fetchTopStories()
             await fetchBestStories()
             await fetchNewStories()
@@ -38,48 +43,51 @@ class HackneyViewModel: ObservableObject {
     }
     
     @MainActor func fetchTopStories() async {
-        print("::Fetching Top Stories::")
+        debugPrint("::Fetching Top Stories::")
         await fetchChannelItems(for: Channels.topstories.rawValue) { item in
             self.topStories.append(item)
         }
     }
     
     @MainActor func fetchBestStories() async {
-        print("::Fetching Best Stories::")
+        debugPrint("::Fetching Best Stories::")
         await fetchChannelItems(for: Channels.beststories.rawValue) { item in
             self.topStories.append(item)
         }
     }
     
     @MainActor func fetchNewStories() async {
-        print("::Fetching New Stories::")
+        debugPrint("::Fetching New Stories::")
         await fetchChannelItems(for: Channels.newstories.rawValue) { item in
             self.topStories.append(item)
         }
     }
     
     @MainActor func fetchAskStories() async {
-        print("::Fetching Ask Stories::")
+        debugPrint("::Fetching Ask Stories::")
         await fetchChannelItems(for: Channels.askstories.rawValue) { item in
             self.topStories.append(item)
         }
     }
     
     @MainActor func fetchShowStories() async {
-        print("::Fetching Ask Stories::")
+        debugPrint("::Fetching Ask Stories::")
         await fetchChannelItems(for: Channels.showstories.rawValue) { item in
             self.topStories.append(item)
         }
     }
     
     @MainActor func fetchJobsStories() async {
-        print("::Fetching Jobs Stories::")
+        debugPrint("::Fetching Jobs Stories::")
         await fetchChannelItems(for: Channels.jobstories.rawValue) { item in
             self.topStories.append(item)
         }
     }
-    
-    
+}
+
+
+// MARK: - Authentication
+extension HackneyViewModel {
     func signIn(id: String) {
         signedInUser = User(id: id, created: 0, karma: 0, about: "Sup", submitted: [])
     }
@@ -88,3 +96,4 @@ class HackneyViewModel: ObservableObject {
         signedInUser = nil
     }
 }
+

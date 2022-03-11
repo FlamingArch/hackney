@@ -15,14 +15,6 @@ struct HackneyApp: App {
 #if os(macOS)
             SidebarView()
                 .environmentObject(viewModel)
-                .alert(viewModel.alertTitle, isPresented: $viewModel.showingAlert) {
-                    Button("Retry") {
-                        // TODO: Implement Retry
-                    }
-                } message: {
-                    Text(viewModel.alertMessage)
-                }
-
 #else
             if (UIDevice.current.userInterfaceIdiom == .phone) {
                 TabbedView()

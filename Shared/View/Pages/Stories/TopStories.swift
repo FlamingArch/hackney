@@ -17,7 +17,9 @@ struct TopStories: View {
             if (viewModel.topStories.count == 0) {
                 HStack {
                     ProgressView()
+#if os(macOS)
                         .scaleEffect(0.5)
+#endif
                     Text("Fetching Posts")
                 }
                 .padding()
