@@ -14,13 +14,31 @@ struct ShowStories: View {
     var body: some View {
         Text("Sup")
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        
-                    } label: {
-                        Label("Hide Viewed", systemImage: "eye")
+                Group {
+                    if (viewModel.showStories.count < 12) {
+                        ProgressView()
+                    } else {
+                        List {
+                            ForEach(viewModel.showStories) { item in
+                                NavigationLink {
+                                    PostScreen(item: item)
+                                } label: {
+                                    PostListItem(item: item)
+                                }
+                            }
+                        }
                     }
                 }
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            // TODO: Implement Hide Viewed Posts
+                        } label: {
+                            Label("Hide Viewed", systemImage: "eye")
+                        }
+                    }
+                }
+                .navigationTitle(Text("Show Stories"))
             }
     }
 }

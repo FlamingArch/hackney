@@ -17,6 +17,10 @@
 		342C8EDB27DB2162009452C2 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8ED927DB2162009452C2 /* Helpers.swift */; };
 		342C8EDD27DB21FB009452C2 /* Old Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8EDC27DB21FB009452C2 /* Old Networking.swift */; };
 		342C8EDE27DB21FB009452C2 /* Old Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342C8EDC27DB21FB009452C2 /* Old Networking.swift */; };
+		34376F6127E4EFEF00B1ABFB /* PostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34376F6027E4EFEF00B1ABFB /* PostScreen.swift */; };
+		34376F6227E4EFEF00B1ABFB /* PostScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34376F6027E4EFEF00B1ABFB /* PostScreen.swift */; };
+		34376F6427E4F26E00B1ABFB /* PostListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34376F6327E4F26E00B1ABFB /* PostListItem.swift */; };
+		34376F6527E4F26E00B1ABFB /* PostListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34376F6327E4F26E00B1ABFB /* PostListItem.swift */; };
 		344E6BA927C282AD003CBBCC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344E6BA827C282AD003CBBCC /* Networking.swift */; };
 		344E6BAA27C282AD003CBBCC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344E6BA827C282AD003CBBCC /* Networking.swift */; };
 		345E249E27BEAD5400F3BA89 /* HackneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E248E27BEAD5200F3BA89 /* HackneyApp.swift */; };
@@ -51,6 +55,8 @@
 		340F35E127C1129C000439FA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		342C8ED927DB2162009452C2 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		342C8EDC27DB21FB009452C2 /* Old Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Old Networking.swift"; sourceTree = "<group>"; };
+		34376F6027E4EFEF00B1ABFB /* PostScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScreen.swift; sourceTree = "<group>"; };
+		34376F6327E4F26E00B1ABFB /* PostListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListItem.swift; sourceTree = "<group>"; };
 		344E6BA827C282AD003CBBCC /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		345E248E27BEAD5200F3BA89 /* HackneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackneyApp.swift; sourceTree = "<group>"; };
 		345E249027BEAD5300F3BA89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 		345E24BC27BEBDE700F3BA89 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				34376F6027E4EFEF00B1ABFB /* PostScreen.swift */,
 				345E24CF27BEBE8500F3BA89 /* UserProfile.swift */,
 				34D00B2327C265380039B9FD /* Stories */,
 				34D00B2427C2654F0039B9FD /* More */,
@@ -161,6 +168,7 @@
 		345E24D227BEBE8900F3BA89 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				34376F6327E4F26E00B1ABFB /* PostListItem.swift */,
 				34E309F527BEC614002891F6 /* UserIcon.swift */,
 			);
 			path = Supporting;
@@ -241,7 +249,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					345E249427BEAD5300F3BA89 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -299,9 +307,11 @@
 				345E24C727BEBE5300F3BA89 /* AskStories.swift in Sources */,
 				345E24B027BEB0C600F3BA89 /* SidebarView.swift in Sources */,
 				340F35E227C1129C000439FA /* Item.swift in Sources */,
+				34376F6127E4EFEF00B1ABFB /* PostScreen.swift in Sources */,
 				345E24D027BEBE8500F3BA89 /* UserProfile.swift in Sources */,
 				344E6BA927C282AD003CBBCC /* Networking.swift in Sources */,
 				342C8EDA27DB2162009452C2 /* Helpers.swift in Sources */,
+				34376F6427E4F26E00B1ABFB /* PostListItem.swift in Sources */,
 				345E24AD27BEB0AF00F3BA89 /* TabbedView.swift in Sources */,
 				345E249E27BEAD5400F3BA89 /* HackneyApp.swift in Sources */,
 				345E24C127BEBE2E00F3BA89 /* NewStories.swift in Sources */,
@@ -323,9 +333,11 @@
 				345E24C827BEBE5300F3BA89 /* AskStories.swift in Sources */,
 				345E24B127BEB0C600F3BA89 /* SidebarView.swift in Sources */,
 				345E24D127BEBE8500F3BA89 /* UserProfile.swift in Sources */,
+				34376F6227E4EFEF00B1ABFB /* PostScreen.swift in Sources */,
 				340F35E427C11418000439FA /* Item.swift in Sources */,
 				344E6BAA27C282AD003CBBCC /* Networking.swift in Sources */,
 				342C8EDB27DB2162009452C2 /* Helpers.swift in Sources */,
+				34376F6527E4F26E00B1ABFB /* PostListItem.swift in Sources */,
 				340F35E627C1141C000439FA /* ViewModel.swift in Sources */,
 				345E24AE27BEB0AF00F3BA89 /* TabbedView.swift in Sources */,
 				345E249F27BEAD5400F3BA89 /* HackneyApp.swift in Sources */,
@@ -523,6 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -551,6 +564,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

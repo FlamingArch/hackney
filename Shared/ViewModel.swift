@@ -33,6 +33,8 @@ class HackneyViewModel: ObservableObject {
     
     @Published var signedInUser: User?
     
+    @Published var viewedPosts = [Int]()
+    
     
     init() {  }
     
