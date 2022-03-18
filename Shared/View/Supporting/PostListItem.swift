@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct PostListItem: View {
+    
+    @EnvironmentObject var viewModel: HackneyViewModel
+    
     var item: Item
     var body: some View {
         VStack (alignment: .leading) {
             Text(item.title ?? "Unknown Title")
-            Text("By \(item.by ?? "Unknown User")")
-                .foregroundColor(.secondary)
+            HStack {
+                if viewModel.bookmarks.contains(item.id) {
+                    Image(systemName: "star.fill")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+                Text("By \(item.by ?? "Unknown User")")
+                    .foregroundColor(.secondary)
+                
+            }
         }
     }
 }
