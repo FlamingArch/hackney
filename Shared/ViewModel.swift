@@ -35,6 +35,7 @@ class HackneyViewModel: ObservableObject {
     
     @Published var viewedPosts = [Int]()
     
+    @Published var bookmarks = [Int]()
     
     init() {  }
     
@@ -169,3 +170,13 @@ extension HackneyViewModel {
     }
 }
 
+// MARK: - Bookmark
+extension HackneyViewModel {
+    func toggleBookmark(_ id: Int) {
+        if bookmarks.contains(id) {
+            bookmarks.removeAll { $0 == id }
+        } else {
+            bookmarks.append(id)
+        }
+    }
+}
