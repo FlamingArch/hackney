@@ -11,7 +11,8 @@ struct PostScreen: View {
     var item: Item
     
     var body: some View {
-        Text(item.title ?? "Unknown Title")
+        WebView(request: URLRequest(url: URL(string: item.url ?? "https://www.apple.com")!))
+            .navigationTitle(Text(item.title ?? "Unknown Title"))
     }
 }
 
