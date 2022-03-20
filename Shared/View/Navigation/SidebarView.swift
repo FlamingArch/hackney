@@ -62,6 +62,12 @@ struct SidebarView: View {
                 
                 Section {
                     NavigationLink {
+                        Bookmarks()
+                    } label: {
+                        Label("Bookmarks", systemImage: "star")
+                    }
+                    
+                    NavigationLink {
                         UserProfile()
                     } label: {
                         Label(viewModel.signedInUser?.id ?? "User", systemImage: "person")

@@ -47,6 +47,8 @@
 		345E24CE27BEBE6000F3BA89 /* JobsStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CC27BEBE6000F3BA89 /* JobsStories.swift */; };
 		345E24D027BEBE8500F3BA89 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CF27BEBE8500F3BA89 /* UserProfile.swift */; };
 		345E24D127BEBE8500F3BA89 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E24CF27BEBE8500F3BA89 /* UserProfile.swift */; };
+		3467867D27E6E14500437FE6 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467867C27E6E14500437FE6 /* Bookmarks.swift */; };
+		3467867E27E6E14500437FE6 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3467867C27E6E14500437FE6 /* Bookmarks.swift */; };
 		34E309F627BEC614002891F6 /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E309F527BEC614002891F6 /* UserIcon.swift */; };
 		34E309F727BEC7E9002891F6 /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E309F527BEC614002891F6 /* UserIcon.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,7 @@
 		345E24C927BEBE5900F3BA89 /* ShowStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowStories.swift; sourceTree = "<group>"; };
 		345E24CC27BEBE6000F3BA89 /* JobsStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsStories.swift; sourceTree = "<group>"; };
 		345E24CF27BEBE8500F3BA89 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		3467867C27E6E14500437FE6 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 		34D00B2227C262680039B9FD /* Hackney (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Hackney (iOS).entitlements"; sourceTree = "<group>"; };
 		34E309F527BEC614002891F6 /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +165,7 @@
 			children = (
 				34376F6027E4EFEF00B1ABFB /* PostScreen.swift */,
 				345E24CF27BEBE8500F3BA89 /* UserProfile.swift */,
+				3467867C27E6E14500437FE6 /* Bookmarks.swift */,
 				34D00B2327C265380039B9FD /* Stories */,
 				34D00B2427C2654F0039B9FD /* More */,
 			);
@@ -314,6 +318,7 @@
 				340F35E227C1129C000439FA /* Item.swift in Sources */,
 				34376F6127E4EFEF00B1ABFB /* PostScreen.swift in Sources */,
 				345E24D027BEBE8500F3BA89 /* UserProfile.swift in Sources */,
+				3467867D27E6E14500437FE6 /* Bookmarks.swift in Sources */,
 				344E6BA927C282AD003CBBCC /* Networking.swift in Sources */,
 				342C8EDA27DB2162009452C2 /* Helpers.swift in Sources */,
 				34376F6427E4F26E00B1ABFB /* PostListItem.swift in Sources */,
@@ -341,6 +346,7 @@
 				345E24D127BEBE8500F3BA89 /* UserProfile.swift in Sources */,
 				34376F6227E4EFEF00B1ABFB /* PostScreen.swift in Sources */,
 				340F35E427C11418000439FA /* Item.swift in Sources */,
+				3467867E27E6E14500437FE6 /* Bookmarks.swift in Sources */,
 				344E6BAA27C282AD003CBBCC /* Networking.swift in Sources */,
 				342C8EDB27DB2162009452C2 /* Helpers.swift in Sources */,
 				34376F6527E4F26E00B1ABFB /* PostListItem.swift in Sources */,
