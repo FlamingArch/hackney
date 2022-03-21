@@ -20,7 +20,7 @@ struct PostScreen: View {
                         // TODO: Implement Hide Viewed Posts
                         viewModel.toggleBookmark(item.id)
                     } label: {
-                        Label("Bookmark", systemImage: viewModel.bookmarks.contains(item.id) ? "star.fill" : "star")
+                        Label("Bookmark", systemImage: viewModel.bookmarkedStoriesID.contains(item.id) ? "star.fill" : "star")
                     }
                 }
             }

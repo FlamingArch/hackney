@@ -13,11 +13,11 @@ struct Bookmarks: View {
     
     var body: some View {
         Group {
-            if viewModel.bookmarkedPosts.isEmpty {
+            if viewModel.bookmarkedStories.isEmpty {
                 ProgressView()
             } else {
                 List {
-                    ForEach(viewModel.bookmarkedPosts) { item in
+                    ForEach(viewModel.bookmarkedStories) { item in
                         NavigationLink {
                             PostScreen(item: item)
                         } label: {
@@ -37,7 +37,7 @@ struct Bookmarks: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
 #if os(macOS)
-                Text("\(viewModel.bookmarks.count) Items")
+                Text("\(viewModel.bookmarkedStoriesID.count) Items")
 #else
                 EditButton()
 #endif
