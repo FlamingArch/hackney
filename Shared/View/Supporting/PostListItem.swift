@@ -16,7 +16,7 @@ struct PostListItem: View {
         VStack (alignment: .leading) {
             Text(item.title ?? "Unknown Title")
             HStack {
-                if viewModel.bookmarks.contains(item) {
+                if viewModel.bookmarkedPosts.contains(item) {
                     Image(systemName: "star.fill")
                         .font(.caption)
                         .foregroundColor(.secondary)

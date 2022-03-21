@@ -12,20 +12,26 @@ struct Bookmarks: View {
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
-        List {
-            ForEach(viewModel.bookmarks) { item in
-                NavigationLink {
-                    PostScreen(item: item)
-                } label: {
-                    PostListItem(item: item)
-                    #if os(macOS)
-                        .onDeleteCommand {
-                            viewModel.toggleBookmark(item)
+        Group {
+            if viewModel.bookmarkedPosts.isEmpty {
+                ProgressView()
+            } else {
+                List {
+                    ForEach(viewModel.bookmarkedPosts) { item in
+                        NavigationLink {
+                            PostScreen(item: item)
+                        } label: {
+                            PostListItem(item: item)
+                            #if os(macOS)
+                                .onDeleteCommand {
+                                    viewModel.toggleBookmark(item.id)
+                                }
+                            #endif
                         }
-                    #endif
+                    }
+                    .onDelete(perform: viewModel.toggleBookmark)
                 }
             }
-            .onDelete(perform: viewModel.toggleBookmark)
         }
         .navigationTitle("Bookmarks")
         .toolbar {
@@ -36,6 +42,9 @@ struct Bookmarks: View {
                 EditButton()
 #endif
             }
+        }
+        .task {
+            await viewModel.fetchBookmarkItems()
         }
     }
 }

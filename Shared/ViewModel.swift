@@ -35,7 +35,8 @@ class HackneyViewModel: ObservableObject {
     
     @Published var viewedPosts = [Int]()
     
-    @Published var bookmarks = [Item]()
+    @Published var bookmarks = UserDefaults.standard.object(forKey: "bookmarks") as? [Int] ?? []
+    @Published var bookmarkedPosts: [Item] =  []
     
     init() {  }
     
@@ -156,6 +157,18 @@ extension HackneyViewModel {
             }
         }
     }
+    
+    @MainActor func fetchBookmarkItems(refresh: Bool = false) async {
+        if refresh {
+            bookmarkedPosts = []
+        }
+        
+        if bookmarkedPosts.isEmpty {
+            for id in bookmarks {
+                await bookmarkedPosts.append(fetchItem(id: id))
+            }
+        }
+    }
 }
 
 
@@ -172,15 +185,17 @@ extension HackneyViewModel {
 
 // MARK: - Bookmark
 extension HackneyViewModel {
-    func toggleBookmark(_ item: Item) {
+    func toggleBookmark(_ item: Int) {
         if bookmarks.contains(item) {
             bookmarks.removeAll { $0 == item }
         } else {
             bookmarks.append(item)
         }
+        UserDefaults.standard.set(bookmarks, forKey: "bookmarks")
     }
     
     func toggleBookmark(index: IndexSet) {
         bookmarks.remove(atOffsets: index)
+        UserDefaults.standard.set(bookmarks, forKey: "bookmarks")
     }
 }

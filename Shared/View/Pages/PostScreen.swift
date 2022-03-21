@@ -18,9 +18,9 @@ struct PostScreen: View {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         // TODO: Implement Hide Viewed Posts
-                        viewModel.toggleBookmark(item)
+                        viewModel.toggleBookmark(item.id)
                     } label: {
-                        Label("Bookmark", systemImage: viewModel.bookmarks.contains(item) ? "star.fill" : "star")
+                        Label("Bookmark", systemImage: viewModel.bookmarks.contains(item.id) ? "star.fill" : "star")
                     }
                 }
             }
