@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostScreen: View {
     var item: Item?
+    @State private var showingSheet = false
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
@@ -16,10 +17,15 @@ struct PostScreen: View {
             if item == nil {
                 Text("No Item Selected")
             } else {
-                WebView(request: URLRequest(url: URL(string: item?.url ?? "https://www.apple.com")!))
+                WebView(request: URLRequest(url: URL(string: item?.url ?? "https://news.ycombinator.com")!))
             }
         }
         .navigationTitle(Text(item?.title ?? "Unknown Title"))
+#if os(iOS)
+        .sheet(isPresented: $showingSheet) {
+            ActivityView(activityItems: [NSURL(string: item?.url ?? "https://news.ycombinator.com")!] as [Any], applicationActivities: nil)
+        }
+#endif
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
@@ -35,10 +41,21 @@ struct PostScreen: View {
                 }
                 .disabled(item == nil)
             }
+#if os(iOS)
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    showingSheet = true
+                } label: {
+                    Label("Share",systemImage: "square.and.arrow.up")
+                }
+                .disabled(item == nil)
+            }
+#endif
         }
 #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
 #endif
     }
+    
 }
 

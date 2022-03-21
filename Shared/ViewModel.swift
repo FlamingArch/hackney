@@ -158,7 +158,7 @@ extension HackneyViewModel {
         }
     }
     
-    @MainActor func fetchBookmarkItems(refresh: Bool = false) async {
+    @MainActor func fetchBookmarkItems(refresh: Bool = true) async {
         if refresh {
             bookmarkedStories = []
         }
