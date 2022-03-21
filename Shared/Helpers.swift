@@ -16,7 +16,7 @@ enum Channels :String {
          jobstories
 }
 
-var debug = true
+var debug = false
 
 func debugPrint(_ msg: String) {
     if debug {
