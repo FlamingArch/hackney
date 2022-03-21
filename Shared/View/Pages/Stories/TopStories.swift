@@ -23,6 +23,16 @@ struct TopStories: View {
                         } label: {
                             PostListItem(item: item)
                         }
+                        .swipeActions {
+                            Button {
+                                viewModel.toggleBookmark(item.id)
+                            } label: {
+                                Label(
+                                    "Bookmark", systemImage: (viewModel.bookmarkedStoriesID.contains(item.id) ? "star.fill" : "star")
+                                )
+                            }
+                            .tint(.yellow)
+                        }
                     }
                 }
             }

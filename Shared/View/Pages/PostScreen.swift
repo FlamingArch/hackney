@@ -23,7 +23,6 @@ struct PostScreen: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    // TODO: Implement Hide Viewed Posts
                     if item != nil {
                         viewModel.toggleBookmark(item!.id)
                     }
