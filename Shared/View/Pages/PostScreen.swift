@@ -31,7 +31,7 @@ struct PostScreen: View {
                     Label(
                         "Bookmark",
                         systemImage: item != nil
-                        ? (viewModel.bookmarks.contains(item!.id) ? "star.fill" : "star")
+                        ? (viewModel.bookmarkedStoriesID.contains(item!.id) ? "star.fill" : "star")
                         : "star")
                 }
                 .disabled(item == nil)

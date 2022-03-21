@@ -189,7 +189,7 @@ extension HackneyViewModel {
         if bookmarkedStoriesID.contains(item) {
             bookmarkedStoriesID.removeAll { $0 == item }
         } else {
-            bookmarkedStoriesID.append(item)
+            bookmarkedStoriesID.insert(item, at: 0)
         }
         UserDefaults.standard.set(bookmarkedStoriesID, forKey: "bookmarks")
     }
