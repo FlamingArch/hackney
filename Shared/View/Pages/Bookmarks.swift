@@ -18,13 +18,25 @@ struct Bookmarks: View {
                     PostScreen(item: item)
                 } label: {
                     PostListItem(item: item)
+                    #if os(macOS)
                         .onDeleteCommand {
                             viewModel.toggleBookmark(item)
                         }
+                    #endif
                 }
             }
+            .onDelete(perform: viewModel.toggleBookmark)
         }
         .navigationTitle("Bookmarks")
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+#if os(macOS)
+                Text("\(viewModel.bookmarks.count) Items")
+#else
+                EditButton()
+#endif
+            }
+        }
     }
 }
 

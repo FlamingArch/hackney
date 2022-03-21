@@ -179,4 +179,8 @@ extension HackneyViewModel {
             bookmarks.append(item)
         }
     }
+    
+    func toggleBookmark(index: IndexSet) {
+        bookmarks.remove(atOffsets: index)
+    }
 }
