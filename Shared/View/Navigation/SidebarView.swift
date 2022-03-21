@@ -75,7 +75,7 @@ struct SidebarView: View {
             
             TopStories()
             
-            Text("No item selected")
+            PostScreen()
         }
         .task {
             await viewModel.fetchAll()
