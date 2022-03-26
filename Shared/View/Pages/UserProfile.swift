@@ -12,8 +12,12 @@ struct UserProfile: View {
     
     var body: some View {
         List {
-            NavigationLink("Sup") {
-                Text("Sup Inside")
+            if (UIDevice.current.userInterfaceIdiom == .phone) {
+                NavigationLink {
+                    Bookmarks()
+                } label: {
+                    Label("Bookmarks", systemImage: "star")
+                }
             }
         }
         .toolbar {
@@ -26,8 +30,7 @@ struct UserProfile: View {
                     }
                 } label: {
                     Label(
-//                        viewModel.signedInUser == nil ? "Login" :
-                            "Logout",
+                        viewModel.signedInUser == nil ? "Login" : "Logout",
                         systemImage: "power"
                     )
                 }
