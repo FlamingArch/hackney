@@ -12,39 +12,46 @@ struct Bookmarks: View {
     @EnvironmentObject var viewModel: HackneyViewModel
     
     var body: some View {
-        Group {
-            if viewModel.bookmarkedStories.isEmpty {
-                ProgressView()
-            } else {
-                List {
-                    ForEach(viewModel.bookmarkedStories) { item in
-                        NavigationLink {
-                            PostScreen(item: item)
-                        } label: {
-                            PostListItem(item: item)
-                            #if os(macOS)
-                                .onDeleteCommand {
-                                    viewModel.toggleBookmark(item.id)
-                                }
-                            #endif
+        if viewModel.bookmarkedStoriesID.isEmpty {
+            Group {
+                Text("No Stories Bookmarked")
+            }
+        } else {
+            Group {
+                if viewModel.bookmarkedStories.isEmpty {
+                    ProgressView()
+                } else {
+                    List {
+                        ForEach(viewModel.bookmarkedStories) { item in
+                            NavigationLink {
+                                PostScreen(item: item)
+                            } label: {
+                                PostListItem(item: item)
+                                #if os(macOS)
+                                    .onDeleteCommand {
+                                        viewModel.toggleBookmark(item.id)
+                                    }
+                                #endif
+                            }
                         }
+                        .onDelete(perform: viewModel.toggleBookmark)
                     }
-                    .onDelete(perform: viewModel.toggleBookmark)
                 }
             }
-        }
-        .navigationTitle("Bookmarks")
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-#if os(macOS)
-                Text("\(viewModel.bookmarkedStoriesID.count) Items")
-#else
-                EditButton()
-#endif
+            .navigationTitle("Bookmarks")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+    #if os(macOS)
+                    Text("\(viewModel.bookmarkedStoriesID.count) Items")
+    #else
+                    EditButton()
+    #endif
+                }
             }
-        }
-        .task {
-            await viewModel.fetchBookmarkItems()
+            .task {
+                await viewModel.fetchBookmarkItems()
+            }
+
         }
     }
 }

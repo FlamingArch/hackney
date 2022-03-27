@@ -37,6 +37,10 @@ struct ShowStories: View {
             }
         }
         .navigationTitle(Text("Show Stories"))
+        .task {
+            await viewModel.fetchShowID()
+            await viewModel.fetchShowItems()
+        }
     }
 }
 

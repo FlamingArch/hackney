@@ -37,5 +37,9 @@ struct JobsStories: View {
             }
         }
         .navigationTitle(Text("Job Stories"))
+        .task {
+            await viewModel.fetchJobsID()
+            await viewModel.fetchJobsItems()
+        }
     }
 }

@@ -37,6 +37,10 @@ struct NewStories: View {
             }
         }
         .navigationTitle(Text("New Stories"))
+        .task {
+            await viewModel.fetchNewID()
+            await viewModel.fetchNewItems()
+        }
     }
 }
 

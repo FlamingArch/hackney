@@ -84,7 +84,7 @@ struct SidebarView: View {
             PostScreen()
         }
         .task {
-            await viewModel.fetchAll()
+            await viewModel.fetchTopItems()
         }
     }
 }

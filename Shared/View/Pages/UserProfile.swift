@@ -12,6 +12,7 @@ struct UserProfile: View {
     
     var body: some View {
         List {
+#if os(iOS)
             if (UIDevice.current.userInterfaceIdiom == .phone) {
                 NavigationLink {
                     Bookmarks()
@@ -19,6 +20,7 @@ struct UserProfile: View {
                     Label("Bookmarks", systemImage: "star")
                 }
             }
+#endif
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

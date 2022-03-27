@@ -37,5 +37,9 @@ struct AskStories: View {
             }
         }
         .navigationTitle(Text("Ask Stories"))
+        .task {
+            await viewModel.fetchAskID()
+            await viewModel.fetchAskItems()
+        }
     }
 }
